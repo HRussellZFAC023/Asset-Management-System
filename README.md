@@ -42,11 +42,11 @@ $ docker-compose exec users /bin/sh -c "isort project/*/*.py"
 ```
 
 api-documentation http://localhost:5001/doc
-users database http://localhost:5001/users
 
 Build frontend (will later be added to docker):
 ```shell
-cd ./services/client
+export REACT_APP_USERS_SERVICE_URL=http://localhost:5001
+cd ./client
 npm i
 npm start
 ```
