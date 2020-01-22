@@ -1,36 +1,48 @@
-import React from 'react';
-import './sign-in.scss';
+import React from "react";
+import "./sign-in.scss";
 
 class SignIn extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {
-
-    }
+    this.state = {};
   }
-  
+
   render() {
-    return(
+    return (
       <section className="hero has-background-info is-fullheight square">
         <div className="hero-body">
           <div className="container">
             <div className="columns is-centered">
               <div className="column is-6-tablet is-5-desktop is-4-widescreen is-large login-box">
                 <form action className="box">
-                <h1 className='title is-4'>Sign In</h1>
+                  <h1 className="title is-4">Sign In</h1>
                   <div className="field">
-                    <label htmlFor className="label">Email</label>
+                    <label htmlFor className="label">
+                      Email
+                    </label>
                     <div className="control has-icons-left">
-                      <input type="email" placeholder="e.g. bobsmith@gmail.com" className="input" required />
+                      <input
+                        type="email"
+                        placeholder="e.g. bobsmith@gmail.com"
+                        className="input"
+                        required
+                      />
                       <span className="icon is-small is-left">
                         <i className="fa fa-envelope" />
                       </span>
                     </div>
                   </div>
                   <div className="field">
-                    <label htmlFor className="label">Password</label>
+                    <label htmlFor className="label">
+                      Password
+                    </label>
                     <div className="control has-icons-left">
-                      <input type="password" placeholder="*******" className="input" required />
+                      <input
+                        type="password"
+                        placeholder="*******"
+                        className="input"
+                        required
+                      />
                       <span className="icon is-small is-left">
                         <i className="fa fa-lock" />
                       </span>
@@ -43,9 +55,7 @@ class SignIn extends React.Component {
                     </label>
                   </div>
                   <div className="field">
-                    <button className="button is-success">
-                      Sign In
-                    </button>
+                    <button className="button is-success">Sign In</button>
                   </div>
                 </form>
               </div>
@@ -53,8 +63,8 @@ class SignIn extends React.Component {
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 
-export default SignIn
+export default SignIn;

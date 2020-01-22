@@ -17,6 +17,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint 'src/**/*.js*'",
+    "prettier:check": "prettier --check 'src/**/*.{js,jsx,json}'",
+    "prettier:write": "prettier --write 'src/**/*.{js,jsx,json}'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -37,6 +40,8 @@
   },
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
+    "eslint": "^6.7.2",
+    "eslint-config-standard-jsx": "^8.1.0",
     "prettier": "^1.19.1"
   }
 }
