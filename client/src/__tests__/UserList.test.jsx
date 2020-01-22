@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 
-import UsersList from '../UsersList';
+import UsersList from '../components/users/UsersList';
 
 afterEach(cleanup);
 
@@ -19,7 +19,7 @@ const users = [
 ];
 
 it('renders a username', () => {
-    const { getByText } = render(<UsersList users={users} />);
+    const { getByText } = render(<UsersList users={users}/>);
     expect(getByText('michael')).toHaveClass('username');
     expect(getByText('michaelherman')).toHaveClass('username');
 });

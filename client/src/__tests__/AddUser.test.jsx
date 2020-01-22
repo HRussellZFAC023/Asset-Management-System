@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 
-import AddUser from '../users/AddUser';
+import AddUser from '../components/users/AddUser';
 
 afterEach(cleanup);
 
@@ -9,6 +9,7 @@ it('renders with default props', () => {
     const { getByLabelText, getByText } = render(<AddUser
         username=''
         email=''
+        addUser={() => { return true }}
         handleChange={() => { return true }}
     />);
 
@@ -30,6 +31,7 @@ it("renders", () => {
     const { asFragment } = render(<AddUser
         username=''
         email=''
+        addUser={() => { return true }}
         handleChange={() => { return true }}
     />);
     expect(asFragment()).toMatchSnapshot();
