@@ -1,20 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 
-<<<<<<< HEAD:client/src/__tests__/AddUser.test.jsx
-import AddUser from '../components/users/AddUser';
-
-afterEach(cleanup);
-
-it('renders with default props', () => {
-    const { getByLabelText, getByText } = render(<AddUser
-        username=''
-        email=''
-        addUser={() => { return true }}
-        handleChange={() => { return true }}
-    />);
-=======
-import AddUser from "../users/AddUser";
+import AddUser from "../components/users/AddUser";
 
 afterEach(cleanup);
 
@@ -23,12 +10,14 @@ it("renders with default props", () => {
     <AddUser
       username=""
       email=""
+      addUser={() => {
+        return true;
+      }}
       handleChange={() => {
         return true;
       }}
     />
   );
->>>>>>> master:client/src/components/__tests__/AddUser.test.jsx
 
   const usernameInput = getByLabelText("Username");
   expect(usernameInput).toHaveAttribute("type", "text");
@@ -45,24 +34,17 @@ it("renders with default props", () => {
 });
 
 it("renders", () => {
-<<<<<<< HEAD:client/src/__tests__/AddUser.test.jsx
-    const { asFragment } = render(<AddUser
-        username=''
-        email=''
-        addUser={() => { return true }}
-        handleChange={() => { return true }}
-    />);
-    expect(asFragment()).toMatchSnapshot();
-=======
   const { asFragment } = render(
     <AddUser
       username=""
       email=""
+      addUser={() => {
+        return true;
+      }}
       handleChange={() => {
         return true;
       }}
     />
   );
   expect(asFragment()).toMatchSnapshot();
->>>>>>> master:client/src/components/__tests__/AddUser.test.jsx
 });

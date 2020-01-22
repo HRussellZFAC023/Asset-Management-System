@@ -14,19 +14,28 @@ class SignUp extends React.Component {
           <div className="container">
             <div className="columns is-centered">
               <div className="column is-6-tablet is-5-desktop is-4-widescreen is-large login-box">
-                <form action='true' className="box">
-                <h1 className='title is-4'>Sign Up</h1>
-                <div className="field">
-                    <label htmlFor='name' className="label">Name</label>
+                <form action="true" className="box">
+                  <h1 className="title is-4">Sign Up</h1>
+                  <div className="field">
+                    <label htmlFor="name" className="label">
+                      Name
+                    </label>
                     <div className="control has-icons-left">
-                      <input type="text" placeholder="e.g. Bob Smith" className="input" required />
+                      <input
+                        type="text"
+                        placeholder="e.g. Bob Smith"
+                        className="input"
+                        required
+                      />
                       <span className="icon is-small is-left">
                         <i className="fa fa-user" />
                       </span>
                     </div>
                   </div>
                   <div className="field">
-                    <label htmlFor='email' className="label">Email</label>
+                    <label htmlFor="email" className="label">
+                      Email
+                    </label>
                     <div className="control has-icons-left">
                       <input
                         type="email"
@@ -40,7 +49,9 @@ class SignUp extends React.Component {
                     </div>
                   </div>
                   <div className="field">
-                    <label htmlFor='password' className="label">Password</label>
+                    <label htmlFor="password" className="label">
+                      Password
+                    </label>
                     <div className="control has-icons-left">
                       <input
                         type="password"
@@ -54,7 +65,9 @@ class SignUp extends React.Component {
                     </div>
                   </div>
                   <div className="field">
-                    <label htmlFor='confirmPassword' className="label">Confirm Password</label>
+                    <label htmlFor="confirmPassword" className="label">
+                      Confirm Password
+                    </label>
                     <div className="control has-icons-left">
                       <input
                         type="password"
@@ -68,7 +81,7 @@ class SignUp extends React.Component {
                     </div>
                   </div>
                   <div className="field">
-                    <label htmlFor='checkbox' className="checkbox">
+                    <label htmlFor="checkbox" className="checkbox">
                       <input type="checkbox" />
                       Remember me
                     </label>

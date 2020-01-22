@@ -1,11 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 
-<<<<<<< HEAD:client/src/__tests__/UserList.test.jsx
-import UsersList from '../components/users/UsersList';
-=======
-import UsersList from "../UsersList";
->>>>>>> master:client/src/components/__tests__/UserList.test.jsx
+import UsersList from "../components/users/UsersList";
 
 afterEach(cleanup);
 
@@ -22,17 +18,10 @@ const users = [
   }
 ];
 
-<<<<<<< HEAD:client/src/__tests__/UserList.test.jsx
-it('renders a username', () => {
-    const { getByText } = render(<UsersList users={users}/>);
-    expect(getByText('michael')).toHaveClass('username');
-    expect(getByText('michaelherman')).toHaveClass('username');
-=======
 it("renders a username", () => {
   const { getByText } = render(<UsersList users={users} />);
   expect(getByText("michael")).toHaveClass("username");
   expect(getByText("michaelherman")).toHaveClass("username");
->>>>>>> master:client/src/components/__tests__/UserList.test.jsx
 });
 
 it("renders", () => {
