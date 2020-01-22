@@ -1,16 +1,14 @@
-import React from 'react';
-import './sign-up.scss';
+import React from "react";
+import "./sign-up.scss";
 
 class SignUp extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {
-
-    }
+    this.state = {};
   }
-  
+
   render() {
-    return(
+    return (
       <section className="hero has-background-info is-fullheight square">
         <div className="hero-body">
           <div className="container">
@@ -30,7 +28,12 @@ class SignUp extends React.Component {
                   <div className="field">
                     <label htmlFor='email' className="label">Email</label>
                     <div className="control has-icons-left">
-                      <input type="email" placeholder="e.g. bobsmith@gmail.com" className="input" required />
+                      <input
+                        type="email"
+                        placeholder="e.g. bobsmith@gmail.com"
+                        className="input"
+                        required
+                      />
                       <span className="icon is-small is-left">
                         <i className="fa fa-envelope" />
                       </span>
@@ -39,7 +42,12 @@ class SignUp extends React.Component {
                   <div className="field">
                     <label htmlFor='password' className="label">Password</label>
                     <div className="control has-icons-left">
-                      <input type="password" placeholder="*******" className="input" required />
+                      <input
+                        type="password"
+                        placeholder="*******"
+                        className="input"
+                        required
+                      />
                       <span className="icon is-small is-left">
                         <i className="fa fa-lock" />
                       </span>
@@ -48,7 +56,12 @@ class SignUp extends React.Component {
                   <div className="field">
                     <label htmlFor='confirmPassword' className="label">Confirm Password</label>
                     <div className="control has-icons-left">
-                      <input type="password" placeholder="*******" className="input" required />
+                      <input
+                        type="password"
+                        placeholder="*******"
+                        className="input"
+                        required
+                      />
                       <span className="icon is-small is-left">
                         <i className="fa fa-lock" />
                       </span>
@@ -61,9 +74,7 @@ class SignUp extends React.Component {
                     </label>
                   </div>
                   <div className="field">
-                    <button className="button is-success">
-                      Sign Up
-                    </button>
+                    <button className="button is-success">Sign Up</button>
                   </div>
                 </form>
               </div>
@@ -71,8 +82,8 @@ class SignUp extends React.Component {
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 
-export default SignUp
+export default SignUp;

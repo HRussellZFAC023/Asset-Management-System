@@ -4,4 +4,4 @@ htmlcov
 .coverage
 venv
 .vscode
-.pylintrc
+node_modules
