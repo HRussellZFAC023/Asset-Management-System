@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const AddUser = props => {
+  const { addUser } = props;
   return (
-    <form onSubmit={event => props.addUser(event)}>
+    <form onSubmit={event => addUser(event)}>
       <div className="field">
         <label className="label is-large" htmlFor="input-username">
           Username

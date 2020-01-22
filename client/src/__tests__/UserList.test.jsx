@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 
-import UsersList from "../UsersList";
+import UsersList from "../components/users/UsersList";
 
 afterEach(cleanup);
 
