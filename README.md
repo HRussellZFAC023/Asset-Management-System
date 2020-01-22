@@ -17,10 +17,11 @@ Docker
 Build and spin up containers:
 
 ```shell
+export REACT_APP_USERS_SERVICE_URL=http://localhost:5001
 $ docker-compose up -d --build
 ```
-
-Ensure http://localhost:5001/ping works.
+Navigate to http://localhost:3007 in your browser to test the app.
+Also ensure http://localhost:5001/ping works.
 
 Create and seed the database:
 
@@ -30,9 +31,12 @@ $ docker-compose exec users python manage.py seed_db
 ```
 Ensure http://localhost:5001/users works as well.
 
-Run the tests, flake8 (lint), Black (code formatter), and isort(import sorter):
+Run the tests, lint, and format your code (before commit)
 
 ```shell
+$ docker-compose exec client npm test
+$ docker-compose exec client npm run prettier:check 
+$ docker-compose exec client npm run lint
 $ docker-compose exec users pytest "project/tests" -p no:warnings --cov="project"
 $ docker-compose exec users flake8 project
 $ docker-compose exec users black project --check
@@ -40,16 +44,10 @@ $ docker-compose exec users /bin/sh -c "isort project/*/*.py --check-only"
 $ docker-compose exec users black project
 $ docker-compose exec users /bin/sh -c "isort project/*/*.py"
 ```
+autofix frontend style errors here with npm run prettier:write in /client/src
 
 api-documentation http://localhost:5001/doc
 
-Build frontend (will later be added to docker):
-```shell
-export REACT_APP_USERS_SERVICE_URL=http://localhost:5001
-cd ./client
-npm i
-npm start
-```
 
 # Contribution guide 
 
