@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.square {
+  height: 100%;
+  background-image: 
+    linear-gradient(transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px),
+    linear-gradient(90deg, transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px);
+    background-size: 100% 12px, 12px 100%;
+  
+}
+
+.my-fullheight {
+  min-height: calc(100vh - 56px);
+}
+
+.title-home {
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 25vh;
+	letter-spacing: 1px;
+}
+
+.home-header {
+  background-color: white;
+	background-image: url(https://media.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif);
+  background-size: cover;
+  background-position: left center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+  font-size: 7em;
+  margin: 0 15%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .title-home {
+    margin-top: 15vh;
+  }
+}

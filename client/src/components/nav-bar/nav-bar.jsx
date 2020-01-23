@@ -40,14 +40,17 @@ class NavBar extends React.Component {
             <a className="navbar-item" href='/'>
               About
             </a>
+            <a className="navbar-item" href='/test'>
+              Test
+            </a>
           </div>
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a href="/signin" className="button is-info">
+                <a href="/signin" className="button is-primary">
                   Sign in
                 </a>
-                <a href="/signup" className="button is-primary">
+                <a href="/signup" className="button is-info">
                   <strong>Sign up</strong>
                 </a>
               </div>

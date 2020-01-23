@@ -14,3 +14,17 @@
 .login-box {
   margin-top: 7vh;
 }
+
+.not-registered {
+  display: flex;
+  a {
+    padding-left: 5px;
+  }
+}
+
+.error {
+  display: flex;
+  text-align: left;
+  font-size: 0.7em;
+  color: black;
+}
