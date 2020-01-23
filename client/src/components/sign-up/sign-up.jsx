@@ -9,7 +9,7 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <section className="hero has-background-info is-fullheight square">
+      <section className="hero has-background-info my-fullheight square">
         <div className="hero-body">
           <div className="container">
             <div className="columns is-centered">
@@ -83,11 +83,11 @@ class SignUp extends React.Component {
                   <div className="field">
                     <label htmlFor="checkbox" className="checkbox">
                       <input type="checkbox" />
-                      Remember me
+                      {" Remember me"}
                     </label>
                   </div>
                   <div className="field">
-                    <button className="button is-success">Sign Up</button>
+                    <button className="button is-info is-fullwidth">Sign Up</button>
                   </div>
                 </form>
               </div>

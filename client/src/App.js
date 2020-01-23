@@ -1,7 +1,12 @@
 import React from "react";
+import { Route } from 'react-router-dom';
 import axios from "axios";
+import NavBar from './components/nav-bar/nav-bar'
 import UsersList from "./components/users/UsersList";
 import AddUser from "./components/users/AddUser";
+import SignIn from "./components/sign-in/sign-in"
+import SignUp from "./components/sign-up/sign-up"
+import './App.css';
 
 class App extends React.Component {
   constructor() {
@@ -14,6 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    document.title = "Umbrella: Meta visualisation for everyone"
     this.getUsers();
   }
 
@@ -51,30 +57,40 @@ class App extends React.Component {
         console.log(err);
       });
   }
-  render() {
-    return (
-      <section className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-half">
-              <br />
-              <h1 className="title is-1">Users</h1>
-              <hr />
-              <br />
-              <AddUser
-                addUser={this.addUser}
-                username={this.state.username}
-                email={this.state.email}
-                // eslint-disable-next-line react/jsx-handler-names
-                handleChange={this.handleChange}
-              />
-              <br />
-              <br />
-              <UsersList users={this.state.users} />
-            </div>
+
+  testUI = () => (
+    <section className="section">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-half">
+            <br />
+            <h1 className="title is-1">Users</h1>
+            <hr />
+            <br />
+            <AddUser
+              addUser={this.addUser}
+              username={this.state.username}
+              email={this.state.email}
+              // eslint-disable-next-line react/jsx-handler-names
+              handleChange={this.handleChange}
+            />
+            <br />
+            <br />
+            <UsersList users={this.state.users} />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  )
+
+  render() {
+    return (
+      <div className='main-root'>
+        <NavBar />
+        <Route exact path ='/' component={this.testUI} />
+        <Route exact path ='/signin' component={SignIn} />
+        <Route exact path ='/signup' component={SignUp} />
+      </div>
     );
   }
 }
