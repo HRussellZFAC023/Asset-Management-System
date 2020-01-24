@@ -2,10 +2,11 @@ import React from "react";
 import { Route } from 'react-router-dom';
 import axios from "axios";
 import NavBar from './components/nav-bar/nav-bar'
-import UsersList from "./components/users/UsersList";
-import AddUser from "./components/users/AddUser";
 import SignIn from "./components/sign-in/sign-in"
 import SignUp from "./components/sign-up/sign-up"
+import Home from './components/home/home'
+import UsersList from "./components/users/UsersList";
+import AddUser from "./components/users/AddUser";
 import './App.css';
 
 class App extends React.Component {
@@ -85,11 +86,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='main-root'>
+      <div>
         <NavBar />
-        <Route exact path ='/' component={this.testUI} />
+        <Route exact path ='/' component={Home} />
         <Route exact path ='/signin' component={SignIn} />
         <Route exact path ='/signup' component={SignUp} />
+        <Route exact path ='/test' component={this.testUI} />
       </div>
     );
   }
