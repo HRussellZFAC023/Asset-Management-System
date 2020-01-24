@@ -35,7 +35,9 @@ Run the tests, lint, and format your code (before commit)
 
 ```shell
 docker-compose exec client npm test
-docker-compose exec client npm run prettier:check 
+docker-compose exec client npm test --coverage
+docker-compose exec client npm run prettier:check
+docker-compose exec client npm run prettier:write 
 docker-compose exec client npm run lint
 docker-compose exec users pytest "project/tests" -p no:warnings --cov="project"
 docker-compose exec users flake8 project
@@ -44,10 +46,9 @@ docker-compose exec users /bin/sh -c "isort project/*/*.py --check-only"
 docker-compose exec users black project
 docker-compose exec users /bin/sh -c "isort project/*/*.py"
 ```
-autofix frontend style errors here with npm run prettier:write in /client/src
-
 api-documentation http://localhost:5001/doc
 
+Initial template for has been created by modifying the following tutorial https://testdriven.io/courses/auth-flask-react/ 
 
 # Contribution guide 
 
