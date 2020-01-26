@@ -18,7 +18,7 @@ Build and spin up containers:
 
 ```shell
 export REACT_APP_USERS_SERVICE_URL=http://localhost:5001
-$ docker-compose up -d --build
+docker-compose up -d --build
 ```
 Navigate to http://localhost:3007 in your browser to test the app.
 Also ensure http://localhost:5001/ping works.
@@ -26,28 +26,29 @@ Also ensure http://localhost:5001/ping works.
 Create and seed the database:
 
 ```shell
-$ docker-compose exec users python manage.py recreate_db
-$ docker-compose exec users python manage.py seed_db
+docker-compose exec users python manage.py recreate_db
+docker-compose exec users python manage.py seed_db
 ```
 Ensure http://localhost:5001/users works as well.
 
 Run the tests, lint, and format your code (before commit)
 
 ```shell
-$ docker-compose exec client npm test
-$ docker-compose exec client npm run prettier:check 
-$ docker-compose exec client npm run lint
-$ docker-compose exec users pytest "project/tests" -p no:warnings --cov="project"
-$ docker-compose exec users flake8 project
-$ docker-compose exec users black project --check
-$ docker-compose exec users /bin/sh -c "isort project/*/*.py --check-only"
-$ docker-compose exec users black project
-$ docker-compose exec users /bin/sh -c "isort project/*/*.py"
+docker-compose exec client npm test
+docker-compose exec client npm test --coverage
+docker-compose exec client npm run prettier:check
+docker-compose exec client npm run prettier:write 
+docker-compose exec client npm run lint
+docker-compose exec users pytest "project/tests" -p no:warnings --cov="project"
+docker-compose exec users flake8 project
+docker-compose exec users black project --check
+docker-compose exec users /bin/sh -c "isort project/*/*.py --check-only"
+docker-compose exec users black project
+docker-compose exec users /bin/sh -c "isort project/*/*.py"
 ```
-autofix frontend style errors here with npm run prettier:write in /client/src
-
 api-documentation http://localhost:5001/doc
 
+Initial template for has been created by modifying the following tutorial https://testdriven.io/courses/auth-flask-react/ 
 
 # Contribution guide 
 
