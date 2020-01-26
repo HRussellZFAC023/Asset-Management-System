@@ -220,7 +220,7 @@ class SignUp extends React.Component {
                         className="input form-control"
                         onKeyPress={this.onEnterKeyPress}
                         onChange={this.onEmailChange}
-                        required autoFocus
+                        required
                       />
                       {errors.email.length > 0 && <span className='error'>{errors.email}</span>}
                       <span className="icon is-small is-left">

@@ -2,11 +2,12 @@ import React from "react";
 import { withRouter, Switch, Route } from 'react-router-dom';
 import axios from "axios";
 import NavBar from './components/nav-bar/nav-bar'
-import SignIn from "./components/sign-in/sign-in"
-import SignUp from "./components/sign-up/sign-up"
-import Home from './components/home/home'
 import UsersList from "./components/users/UsersList";
-import './App.css';
+import SignIn from "./components/sign-in/sign-in";
+import SignUp from "./components/sign-up/sign-up";
+import Home from "./components/home/home";
+import Dashboard from './components/dashboard/dashboard'
+import './App.scss';
 
 class App extends React.Component {
   constructor() {
@@ -61,6 +62,7 @@ class App extends React.Component {
           <Route exact path ='/signin' component={SignIn} />
           <Route exact path ='/signup' component={SignUp} />
           <Route exact path ='/users' component={this.testUI} />
+          <Route exact path ='/dashboard' component={Dashboard} />
         </Switch>
       </div>
     );
