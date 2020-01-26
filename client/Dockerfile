@@ -1,23 +1,17 @@
-# pull official base image
-FROM node:13.5.0-alpine
+FROM node:8
 
-# set working directory
-WORKDIR /usr/src/app
+ADD yarn.lock /yarn.lock
+ADD package.json /package.json
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+ENV NODE_PATH=/node_modules
+ENV PATH=$PATH:/node_modules/.bin
+RUN yarn
 
-# install and cache app dependencies
-COPY package.json /usr/src/app/package.json
-COPY package-lock.json /usr/src/app/package-lock.json
+WORKDIR /app
+ADD . /app
 
-RUN apk --no-cache --virtual build-dependencies add \
-  python \
-  make \
-  g++ 
+EXPOSE 3000
+EXPOSE 35729
 
-RUN npm ci
-RUN npm install react-scripts@3.3.0 -g --silent
-
-# start app
-CMD ["npm", "start"]
+ENTRYPOINT ["/bin/bash", "/app/run.sh"]
+CMD ["start"]
