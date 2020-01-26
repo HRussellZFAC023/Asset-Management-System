@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Route } from 'react-router-dom';
+import { withRouter, Switch, Route } from 'react-router-dom';
 import axios from "axios";
 import NavBar from './components/nav-bar/nav-bar'
 import UsersList from "./components/users/UsersList";
