@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="container">
+        <br />
         <div className="columns">
           <div className="column is-3 ">
             <Sidebar />
