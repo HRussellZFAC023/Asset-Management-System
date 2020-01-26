@@ -9,158 +9,158 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div class="container">
-        <div class="columns">
-          <div class="column is-3 ">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-3 ">
             <Sidebar />
           </div>
-          <div class="column is-9">
-            <nav class="breadcrumb" aria-label="breadcrumbs">
+          <div className="column is-9">
+            <nav className="breadcrumb" aria-label="breadcrumbs">
               <ul>
-                <li class="is-active">Dashboard</li>
+                <li className="is-active">Dashboard</li>
               </ul>
             </nav>
-            <section class="hero is-dark welcome is-small">
-              <div class="hero-body">
-                <div class="container">
-                  <h1 class="title">
+            <section className="hero is-dark welcome is-small">
+              <div className="hero-body">
+                <div className="container">
+                  <h1 className="title">
                     Hello, Admin.
                   </h1>
-                  <h2 class="subtitle">
+                  <h2 className="subtitle">
                     Welcome to your dashboard!
                   </h2>
                 </div>
               </div>
             </section>
 
-            <section class="info-tiles">
-              <div class="tile is-ancestor has-text-centered">
-                <div class="tile is-parent">
-                  <article class="tile is-child box">
-                    <p class="title">15</p>
-                    <p class="subtitle">Assets</p>
+            <section className="info-tiles">
+              <div className="tile is-ancestor has-text-centered">
+                <div className="tile is-parent">
+                  <article className="tile is-child box">
+                    <p className="title">15</p>
+                    <p className="subtitle">Assets</p>
                   </article>
                 </div>
-                <div class="tile is-parent">
-                  <article class="tile is-child box">
-                    <p class="title">3</p>
-                    <p class="subtitle">Types</p>
+                <div className="tile is-parent">
+                  <article className="tile is-child box">
+                    <p className="title">3</p>
+                    <p className="subtitle">Types</p>
                   </article>
                 </div>
-                <div class="tile is-parent">
-                  <article class="tile is-child box">
-                    <p class="title">30</p>
-                    <p class="subtitle">Users</p>
+                <div className="tile is-parent">
+                  <article className="tile is-child box">
+                    <p className="title">30</p>
+                    <p className="subtitle">Users</p>
                   </article>
                 </div>
               </div>
             </section>
-            <div class="columns">
-              <div class="column is-6">
-                <div class="card events-card">
-                  <header class="card-header">
-                    <p class="card-header-title">
+            <div className="columns">
+              <div className="column is-6">
+                <div className="card events-card">
+                  <header className="card-header">
+                    <p className="card-header-title">
                       Events
                     </p>
-                    <span class="icon">
-                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    <span className="icon">
+                      <i className="fa fa-angle-down" aria-hidden="true"></i>
                     </span>
                   </header>
-                  <div class="card-table">
-                    <div class="content">
-                      <table class="table is-fullwidth is-striped">
+                  <div className="card-table">
+                    <div className="content">
+                      <table className="table is-fullwidth is-striped">
                         <tbody>
                           <tr>
-                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                            <td width="5%"><i className="fa fa-bell-o"></i></td>
                             <td>Lorum ipsum dolem aire</td>
-                            <td class="level-right">Action</td>
+                            <td className="level-right">Action</td>
                           </tr>
                           <tr>
-                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                            <td width="5%"><i className="fa fa-bell-o"></i></td>
                             <td>Lorum ipsum dolem aire</td>
-                            <td class="level-right">Action</td>
+                            <td className="level-right">Action</td>
                           </tr>
                           <tr>
-                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                            <td width="5%"><i className="fa fa-bell-o"></i></td>
                             <td>Lorum ipsum dolem aire</td>
-                            <td class="level-right">Action</td>
+                            <td className="level-right">Action</td>
                           </tr>
                           <tr>
-                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                            <td width="5%"><i className="fa fa-bell-o"></i></td>
                             <td>Lorum ipsum dolem aire</td>
-                            <td class="level-right">Action</td>
+                            <td className="level-right">Action</td>
                           </tr>
                           <tr>
-                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                            <td width="5%"><i className="fa fa-bell-o"></i></td>
                             <td>Lorum ipsum dolem aire</td>
-                            <td class="level-right">Action</td>
+                            <td className="level-right">Action</td>
                           </tr>
                           <tr>
-                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                            <td width="5%"><i className="fa fa-bell-o"></i></td>
                             <td>Lorum ipsum dolem aire</td>
-                            <td class="level-right">Action</td>
+                            <td className="level-right">Action</td>
                           </tr>
                           <tr>
-                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                            <td width="5%"><i className="fa fa-bell-o"></i></td>
                             <td>Lorum ipsum dolem aire</td>
-                            <td class="level-right">Action</td>
+                            <td className="level-right">Action</td>
                           </tr>
                           <tr>
-                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                            <td width="5%"><i className="fa fa-bell-o"></i></td>
                             <td>Lorum ipsum dolem aire</td>
-                            <td class="level-right">Action</td>
+                            <td className="level-right">Action</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
                   </div>
-                  <footer class="card-footer">
+                  <footer className="card-footer">
                     View All
                   </footer>
                 </div>
               </div>
-              <div class="column is-6">
-                <div class="card">
-                  <header class="card-header">
-                    <p class="card-header-title">
+              <div className="column is-6">
+                <div className="card">
+                  <header className="card-header">
+                    <p className="card-header-title">
                       Asset Search
                     </p>
-                    <span class="icon">
-                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    <span className="icon">
+                      <i className="fa fa-angle-down" aria-hidden="true"></i>
                     </span>
                   </header>
-                  <div class="card-content">
-                    <div class="content">
-                      <div class="control has-icons-left has-icons-right">
-                        <input class="input is-large" type="text" placeholder="" />
-                        <span class="icon is-medium is-left">
-                          <i class="fa fa-search"></i>
+                  <div className="card-content">
+                    <div className="content">
+                      <div className="control has-icons-left has-icons-right">
+                        <input className="input is-large" type="text" placeholder="" />
+                        <span className="icon is-medium is-left">
+                          <i className="fa fa-search"></i>
                         </span>
-                        <span class="icon is-medium is-right">
-                          <i class="fa fa-check"></i>
+                        <span className="icon is-medium is-right">
+                          <i className="fa fa-check"></i>
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="card">
-                  <header class="card-header">
-                    <p class="card-header-title">
+                <div className="card">
+                  <header className="card-header">
+                    <p className="card-header-title">
                       User Search
                     </p>
-                    <span class="icon">
-                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    <span className="icon">
+                      <i className="fa fa-angle-down" aria-hidden="true"></i>
                     </span>
                   </header>
-                  <div class="card-content">
-                    <div class="content">
-                      <div class="control has-icons-left has-icons-right">
-                        <input class="input is-large" type="text" placeholder="" />
-                        <span class="icon is-medium is-left">
-                          <i class="fa fa-search"></i>
+                  <div className="card-content">
+                    <div className="content">
+                      <div className="control has-icons-left has-icons-right">
+                        <input className="input is-large" type="text" placeholder="" />
+                        <span className="icon is-medium is-left">
+                          <i className="fa fa-search"></i>
                         </span>
-                        <span class="icon is-medium is-right">
-                          <i class="fa fa-check"></i>
+                        <span className="icon is-medium is-right">
+                          <i className="fa fa-check"></i>
                         </span>
                       </div>
                     </div>
