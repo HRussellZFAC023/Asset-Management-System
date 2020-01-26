@@ -8,20 +8,20 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <aside class="menu is-hidden-mobile">
-        <p class="menu-label">
+      <aside className="menu is-hidden-mobile">
+        <p className="menu-label">
           General
         </p>
-        <ul class="menu-list">
+        <ul className="menu-list">
           <li>Dashboard</li>
           <li>Assets</li>
           <li>Types</li>
           <li>Other</li>
         </ul>
-        <p class="menu-label">
+        <p className="menu-label">
           Administration
         </p>
-        <ul class="menu-list">
+        <ul className="menu-list">
           <li>Settings</li>
           <li>Users
             <ul>
@@ -34,10 +34,10 @@ class Sidebar extends React.Component {
           <li>Add/Remove a Type</li>
           <li>Remove an Asset</li>
         </ul>
-        <p class="menu-label">
+        <p className="menu-label">
           Assets
         </p>
-        <ul class="menu-list">
+        <ul className="menu-list">
           <li>Your Assets</li>
           <li>Create an Asset</li>
           <li>Update an Asset</li>

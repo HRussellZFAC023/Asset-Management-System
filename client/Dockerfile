@@ -1,17 +1,26 @@
-FROM node:8
+# pull official base image
+FROM node:13.5.0-alpine
 
-ADD yarn.lock /yarn.lock
-ADD package.json /package.json
-
+# add `/node_modules/.bin` to $PATH
 ENV NODE_PATH=/node_modules
 ENV PATH=$PATH:/node_modules/.bin
-RUN yarn
 
-WORKDIR /app
-ADD . /app
+# install and cache app dependencies
+COPY package.json /package.json
+
+# set working directory
+WORKDIR /usr/src/app
+ADD . /usr/src/app
 
 EXPOSE 3000
 EXPOSE 35729
 
-ENTRYPOINT ["/bin/bash", "/app/run.sh"]
-CMD ["start"]
+RUN apk --no-cache --virtual build-dependencies add \
+  python \
+  make \
+  g++
+
+RUN npm install
+
+# start app
+CMD ["npm", "start"]
