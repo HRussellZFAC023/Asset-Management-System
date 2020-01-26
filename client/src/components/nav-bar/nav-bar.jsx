@@ -40,8 +40,8 @@ class NavBar extends React.Component {
             <a className="navbar-item" href='/'>
               About
             </a>
-            <a className="navbar-item" href='/test'>
-              Test
+            <a className="navbar-item" href='/users'>
+              Users
             </a>
           </div>
           <div className="navbar-end">

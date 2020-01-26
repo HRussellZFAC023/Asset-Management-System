@@ -6,9 +6,11 @@ const UsersList = props => {
     <div>
       {props.users.map(user => {
         return (
-          <p key={user.id} className="box title is-4 username">
-            {user.username}
-          </p>
+          <div key={user.id} className="box title is-4 username">
+            <span>{'Username: '}
+            <p className="username">{user.username}</p></span>
+            <br/> {'Email: ' + user.email}
+          </div>
         );
       })}
     </div>
