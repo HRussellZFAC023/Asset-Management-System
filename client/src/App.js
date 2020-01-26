@@ -57,11 +57,13 @@ class App extends React.Component {
     return (
       <div>
         <NavBar />
-        <Route exact path ='/' component={Home} />
-        <Route exact path ='/signin' component={SignIn} />
-        <Route exact path ='/signup' component={SignUp} />
-        <Route exact path ='/users' component={this.testUI} />
-        <Route exact path ='/dashboard' component={Dashboard} />
+        <Switch>
+          <Route exact path ='/' component={Home} />
+          <Route exact path ='/signin' component={SignIn} />
+          <Route exact path ='/signup' component={SignUp} />
+          <Route exact path ='/users' component={this.testUI} />
+          <Route exact path ='/dashboard' component={Dashboard} />
+        </Switch>
       </div>
     );
   }
