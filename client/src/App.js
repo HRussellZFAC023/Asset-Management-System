@@ -6,6 +6,7 @@ import UsersList from "./components/users/UsersList";
 import AddUser from "./components/users/AddUser";
 import SignIn from "./components/sign-in/sign-in";
 import SignUp from "./components/sign-up/sign-up";
+import Home from "./components/home/home";
 import Dashboard from './components/dashboard/dashboard'
 import './App.scss';
 
