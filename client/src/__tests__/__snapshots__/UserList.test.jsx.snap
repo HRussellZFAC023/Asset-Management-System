@@ -3,16 +3,34 @@
 exports[`renders 1`] = `
 <DocumentFragment>
   <div>
-    <p
+    <div
       class="box title is-4 username"
     >
-      michael
-    </p>
-    <p
+      <span>
+        Username: 
+        <p
+          class="username"
+        >
+          michael
+        </p>
+      </span>
+      <br />
+       Email: hermanmu@gmail.com
+    </div>
+    <div
       class="box title is-4 username"
     >
-      michaelherman
-    </p>
+      <span>
+        Username: 
+        <p
+          class="username"
+        >
+          michaelherman
+        </p>
+      </span>
+      <br />
+       Email: michael@mherman.org
+    </div>
   </div>
 </DocumentFragment>
 `;

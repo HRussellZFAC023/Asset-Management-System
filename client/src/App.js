@@ -1,12 +1,11 @@
 import React from "react";
-import { Route } from 'react-router-dom';
+import { withRouter, Switch, Route } from 'react-router-dom';
 import axios from "axios";
 import NavBar from './components/nav-bar/nav-bar'
 import SignIn from "./components/sign-in/sign-in"
 import SignUp from "./components/sign-up/sign-up"
 import Home from './components/home/home'
 import UsersList from "./components/users/UsersList";
-import AddUser from "./components/users/AddUser";
 import './App.css';
 
 class App extends React.Component {
@@ -30,24 +29,6 @@ class App extends React.Component {
     this.setState(obj);
   };
 
-  addUser = event => {
-    event.preventDefault();
-
-    const data = {
-      username: this.state.username,
-      email: this.state.email
-    };
-
-    axios
-      .post(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`, data)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
   getUsers() {
     axios
       .get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
@@ -64,19 +45,6 @@ class App extends React.Component {
       <div className="container">
         <div className="columns">
           <div className="column is-half">
-            <br />
-            <h1 className="title is-1">Users</h1>
-            <hr />
-            <br />
-            <AddUser
-              addUser={this.addUser}
-              username={this.state.username}
-              email={this.state.email}
-              // eslint-disable-next-line react/jsx-handler-names
-              handleChange={this.handleChange}
-            />
-            <br />
-            <br />
             <UsersList users={this.state.users} />
           </div>
         </div>
@@ -88,13 +56,15 @@ class App extends React.Component {
     return (
       <div>
         <NavBar />
-        <Route exact path ='/' component={Home} />
-        <Route exact path ='/signin' component={SignIn} />
-        <Route exact path ='/signup' component={SignUp} />
-        <Route exact path ='/test' component={this.testUI} />
+        <Switch>
+          <Route exact path ='/' component={Home} />
+          <Route exact path ='/signin' component={SignIn} />
+          <Route exact path ='/signup' component={SignUp} />
+          <Route exact path ='/users' component={this.testUI} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

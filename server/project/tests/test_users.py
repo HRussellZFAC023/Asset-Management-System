@@ -12,7 +12,13 @@ def test_add_user(test_app, test_database):
     client = test_app.test_client()
     resp = client.post(
         "/users",
-        data=json.dumps({"username": "michael", "email": "michael@testdriven.io"}),
+        data=json.dumps(
+            {
+                "username": "michael",
+                "email": "michael@testdriven.io",
+                "password": "Passw0rd123",
+            }
+        ),
         content_type="application/json",
     )
     data = json.loads(resp.data.decode())
@@ -58,7 +64,7 @@ def test_add_user_duplicate_email(test_app, test_database):
 
 
 def test_single_user(test_app, test_database, add_user):
-    user = add_user("jeffrey", "jeffrey@testdriven.io")
+    user = add_user("jeffrey", "jeffrey@testdriven.io", "Passw0rd123")
     client = test_app.test_client()
     resp = client.get(f"/users/{user.id}")
     data = json.loads(resp.data.decode())
@@ -77,8 +83,8 @@ def test_single_user_incorrect_id(test_app, test_database):
 
 def test_all_users(test_app, test_database, add_user):
     test_database.session.query(User).delete()
-    add_user("michael", "michael@mherman.org")
-    add_user("fletcher", "fletcher@notreal.com")
+    add_user("michael", "michael@mherman.org", "Passw0rd123")
+    add_user("fletcher", "fletcher@notreal.com", "Passw0rd123")
     client = test_app.test_client()
     resp = client.get("/users")
     data = json.loads(resp.data.decode())
@@ -92,7 +98,7 @@ def test_all_users(test_app, test_database, add_user):
 
 def test_remove_user(test_app, test_database, add_user):
     test_database.session.query(User).delete()
-    user = add_user("user-to-be-removed", "remove-me@testdriven.io")
+    user = add_user("user-to-be-removed", "remove-me@testdriven.io", "Passw0rd123")
     client = test_app.test_client()
     resp_one = client.get("/users")
     data = json.loads(resp_one.data.decode())
@@ -117,7 +123,7 @@ def test_remove_user_incorrect_id(test_app, test_database):
 
 
 def test_update_user(test_app, test_database, add_user):
-    user = add_user("user-to-be-updated", "update-me@testdriven.io")
+    user = add_user("user-to-be-updated", "update-me@testdriven.io", "Passw0rd123")
     client = test_app.test_client()
     resp_one = client.put(
         f"/users/{user.id}",

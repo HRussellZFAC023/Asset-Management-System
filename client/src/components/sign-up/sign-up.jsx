@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import "./sign-up.scss";
 
 class SignUp extends React.Component {
@@ -9,6 +10,7 @@ class SignUp extends React.Component {
       email: '',
       password: '',
       password_match: false,
+      response: '',
       errors: {
         name: '',
         email: '',
@@ -19,6 +21,28 @@ class SignUp extends React.Component {
       showError: false
     }
   }
+
+  addUser = event => {
+    event.preventDefault();
+
+    const data = {
+      username: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    axios
+      .post(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`, data)
+      .then(res => {
+        console.log(res);
+        this.setState({response: res.data.message})
+        window.location.replace("/users")
+      })
+      .catch(err => {
+        console.log(err);
+        this.setState({response: err.message})
+      });
+  };
 
   handleChange = (event) => {
     this.setState({showError: false})
@@ -132,13 +156,10 @@ class SignUp extends React.Component {
     }
   } 
 
-  onSubmitRegister = () => {
-    const {name, email, password} = this.state;
+  onSubmitRegister = (event) => {
+    //const {name, email, password} = this.state;
     if (this.formIsValid()) {
-      alert('Form submitted!');
-      console.log('name: ' + name);
-      console.log('email: ' + email);
-      console.log('password: ' + password);
+      this.addUser(event);
     }
   }
 
@@ -157,7 +178,7 @@ class SignUp extends React.Component {
   }
 
   render() {
-    const {errors} = this.state;
+    const {errors, response} = this.state;
     return (
       <section className="hero has-background-info my-fullheight square">
         <div className="hero-body">
@@ -258,6 +279,7 @@ class SignUp extends React.Component {
                   <div className="field">
                     <button onClick={this.onSubmitRegister} className="button is-info is-fullwidth" type="submit">Sign Up</button>
                   </div>
+                  {response.length > 0 && <span className='error'>{response}</span>}
                 </div>
               </div>
             </div>
