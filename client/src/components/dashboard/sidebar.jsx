@@ -22,15 +22,7 @@ class Sidebar extends React.Component {
           Administration
         </p>
         <ul className="menu-list">
-          <li>Settings</li>
-          <li>Users
-            <ul>
-              <li>Find a User</li>
-              <li>Change User Permissions</li>
-              <li>Add a User</li>
-              <li>Remove a User</li>
-            </ul>
-          </li>
+          <li>Users</li>
           <li>Add/Remove a Type</li>
           <li>Remove an Asset</li>
         </ul>
