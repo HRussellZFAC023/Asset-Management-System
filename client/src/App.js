@@ -7,6 +7,7 @@ import SignIn from "./components/sign-in/sign-in";
 import SignUp from "./components/sign-up/sign-up";
 import Home from "./components/home/home";
 import Dashboard from './components/dashboard/dashboard'
+import NotFound from './components/not-found/not-found'
 import './App.scss';
 
 class App extends React.Component {
@@ -41,7 +42,7 @@ class App extends React.Component {
       });
   }
 
-  testUI = () => (
+  displayUsers = () => (
     <section className="section">
       <div className="container">
         <div className="columns">
@@ -56,13 +57,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <Route exact path={['/', '/signin', '/signup', '/users', '/dashboard']} component={NavBar} />
         <Switch>
           <Route exact path ='/' component={Home} />
           <Route exact path ='/signin' component={SignIn} />
           <Route exact path ='/signup' component={SignUp} />
-          <Route exact path ='/users' component={this.testUI} />
+          <Route exact path ='/users' component={this.displayUsers} />
           <Route exact path ='/dashboard' component={Dashboard} />
+          <Route path="" component={NotFound}/>
         </Switch>
       </div>
     );
