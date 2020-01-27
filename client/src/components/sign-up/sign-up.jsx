@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import Particles from 'react-particles-js';
+import particlesOptions from '../../consts/particles';
 import "./sign-up.scss";
 
 class SignUp extends React.Component {
@@ -180,112 +182,114 @@ class SignUp extends React.Component {
   render() {
     const {errors, response} = this.state;
     return (
-      <section className="hero has-background-info my-fullheight square">
-        <div className="hero-body">
-          <div className="container">
-            <div className="columns is-centered">
-              <div className="column is-6-tablet is-5-desktop is-4-widescreen is-large login-box">
-                <div className="box">
-                  <h1 className="title is-4">Sign Up</h1>
-                  <div className="field">
-                    <label htmlFor="name" className="label">
-                      Name
-                    </label>
-                    <div className="control has-icons-left">
-                      <input
-                        name='name'
-                        type="text"
-                        id="inputName"
-                        placeholder="e.g. Bob Smith"
-                        className="input form-control"
-                        onKeyPress={this.onEnterKeyPress}
-                        onChange={this.onNameChange}
-                        required autoFocus
-                      />
-                      {errors.name.length > 0 && <span className='error'>{errors.name}</span>}
-                      <span className="icon is-small is-left">
-                        <i className="fa fa-user" />
-                      </span>
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="email" className="label">
-                      Email
-                    </label>
-                    <div className="control has-icons-left">
-                      <input
-                        name='email'
-                        type="email"
-                        placeholder="e.g. bobsmith@gmail.com"
-                        className="input form-control"
-                        onKeyPress={this.onEnterKeyPress}
-                        onChange={this.onEmailChange}
-                        required
-                      />
-                      {errors.email.length > 0 && <span className='error'>{errors.email}</span>}
-                      <span className="icon is-small is-left">
-                        <i className="fa fa-envelope" />
-                      </span>
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="password" className="label">
-                      Password
-                    </label>
-                    <div className="control has-icons-left">
-                      <input
-                        name='password'
-                        type="password"
-                        id="inputPassword"
-                        placeholder="*******"
-                        className="input form-control"
-                        onKeyPress={this.onEnterKeyPress}
-                        onChange={this.onPasswordChange}
-                        required
-                      />
-                      {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
-                      <span className="icon is-small is-left">
-                        <i className="fa fa-lock" />
-                      </span>
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="confirmPassword" className="label">
-                      Confirm Password
-                    </label>
-                    <div className="control has-icons-left">
-                      <input
-                        name="c_password"
-                        type="password"
-                        id="inputCPassword"
-                        placeholder="*******"
-                        className="input form-control"
-                        onKeyPress={this.onEnterKeyPress}
-                        onChange={this.handleChange}
-                        required
-                      />
-                      {errors.c_password.length > 0 && <span className='error'>{errors.c_password}</span>}
-                      <span className="icon is-small is-left">
-                        <i className="fa fa-lock" />
-                      </span>
-                    </div>
-                  </div>
-                  <div className="field">
-                    <label htmlFor="checkbox" className="checkbox">
-                      <input type="checkbox" id='checkbox'/>
-                      {" Remember me"}
-                    </label>
-                  </div>
-                  <div className="field">
-                    <button onClick={this.onSubmitRegister} className="button is-info is-fullwidth" type="submit">Sign Up</button>
-                  </div>
-                  {response.length > 0 && <span className='error'>{response}</span>}
+      <div className="columns is-vcentered">
+        <div className="login sidebar column is-4 ">
+          <section className="section">
+            <div className="has-text-centered">
+            <img onClick={() => window.location.replace("/")} className="login-logo" 
+              alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg"/>
+            </div>
+              <h1 className="title is-4">Sign Up</h1>
+              <div className="field">
+                <label htmlFor="name" className="label">
+                  Name
+                </label>
+                <div className="control has-icons-left">
+                  <input
+                    name='name'
+                    type="text"
+                    id="inputName"
+                    placeholder="e.g. Bob Smith"
+                    className="input form-control"
+                    onKeyPress={this.onEnterKeyPress}
+                    onChange={this.onNameChange}
+                    required autoFocus
+                  />
+                  {errors.name.length > 0 && <span className='error'>{errors.name}</span>}
+                  <span className="icon is-small is-left">
+                    <i className="fa fa-user" />
+                  </span>
                 </div>
               </div>
-            </div>
-          </div>
+              <div className="field">
+                <label htmlFor="email" className="label">
+                  Email
+                </label>
+                <div className="control has-icons-left">
+                  <input
+                    name='email'
+                    type="email"
+                    placeholder="e.g. bobsmith@gmail.com"
+                    className="input form-control"
+                    onKeyPress={this.onEnterKeyPress}
+                    onChange={this.onEmailChange}
+                    required
+                  />
+                  {errors.email.length > 0 && <span className='error'>{errors.email}</span>}
+                  <span className="icon is-small is-left">
+                    <i className="fa fa-envelope" />
+                  </span>
+                </div>
+              </div>
+              <div className="field">
+                <label htmlFor="password" className="label">
+                  Password
+                </label>
+                <div className="control has-icons-left">
+                  <input
+                    name='password'
+                    type="password"
+                    id="inputPassword"
+                    placeholder="*******"
+                    className="input form-control"
+                    onKeyPress={this.onEnterKeyPress}
+                    onChange={this.onPasswordChange}
+                    required
+                  />
+                  {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
+                  <span className="icon is-small is-left">
+                    <i className="fa fa-lock" />
+                  </span>
+                </div>
+              </div>
+              <div className="field">
+                <label htmlFor="confirmPassword" className="label">
+                  Confirm Password
+                </label>
+                <div className="control has-icons-left">
+                  <input
+                    name="c_password"
+                    type="password"
+                    id="inputCPassword"
+                    placeholder="*******"
+                    className="input form-control"
+                    onKeyPress={this.onEnterKeyPress}
+                    onChange={this.handleChange}
+                    required
+                  />
+                  {errors.c_password.length > 0 && <span className='error'>{errors.c_password}</span>}
+                  <span className="icon is-small is-left">
+                    <i className="fa fa-lock" />
+                  </span>
+                </div>
+              </div>
+              <div className="field">
+                <label htmlFor="checkbox" className="checkbox">
+                  <input type="checkbox" id='checkbox'/>
+                  {" Remember me"}
+                </label>
+              </div>
+              <div className="field">
+                <button onClick={this.onSubmitRegister} className="button is-info is-fullwidth" type="submit">Sign Up</button>
+              </div>
+              {response.length > 0 && <span className='error'>{response}</span>}
+              <div className='not-registered is-centered'><p>Already have an account?</p><a href='/signin'>Sign in</a></div>
+          </section>
         </div>
-      </section>
+        <div id="particles-js" className="interactive-bg has-background-info column is-8">
+          <Particles className='particles' params={particlesOptions} />
+        </div>
+      </div>
     );
   }
 }

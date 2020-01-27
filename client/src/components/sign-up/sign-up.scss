@@ -1,16 +1,72 @@
-.square {
-  height: 100%;
-  background-image: 
-    linear-gradient(transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px),
-    linear-gradient(90deg, transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px);
-    background-size: 100% 12px, 12px 100%;
-  
-}
-
 .my-fullheight {
   min-height: calc(100vh - 56px);
 }
 
 .login-box {
   margin-top: 7vh;
+}
+
+.not-registered {
+  display: flex;
+  a {
+    padding-left: 5px;
+  }
+}
+
+.error {
+  display: flex;
+  text-align: left;
+  font-size: 0.7em;
+  color: black;
+}
+
+.interactive-bg {
+  height: 100vh;
+  background-image: 
+    linear-gradient(transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px),
+    linear-gradient(90deg, transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px);
+  background-size: 100% 12px, 12px 100%;
+  -webkit-box-shadow: inset 24px 4px 64px -24px rgba(71,71,71,1);
+  -moz-box-shadow: inset 24px 4px 64px -24px rgba(71,71,71,1);
+  box-shadow: inset 24px 4px 64px -24px rgba(71,71,71,1);
+  padding: 0px;
+}
+@media (max-width: 769px) {
+  .interactive-bg{
+    visibility: hidden;
+  }
+}
+
+.not-registered {
+  display: flex;
+  a {
+    padding-left: 5px;
+  }
+}
+
+.input {
+  border-radius: 50px;
+}
+
+.button-login {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-width: 150px;
+}
+
+.login-logo {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  max-height: 100px;
+  cursor: pointer;
+}
+
+.columns{
+  margin: 0px;
+}
+
+@media (min-width: 770px) {
+  .sidebar {
+    margin-top: -100px;
+   }
 }

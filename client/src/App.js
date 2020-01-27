@@ -57,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Route exact path={['/', '/signin', '/signup', '/users', '/dashboard']} component={NavBar} />
+        <Route exact path={['/', '/users', '/dashboard']} component={NavBar} />
         <Switch>
           <Route exact path ='/' component={Home} />
           <Route exact path ='/signin' component={SignIn} />
