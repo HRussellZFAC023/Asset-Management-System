@@ -3,10 +3,11 @@
 
 import json
 
-import pytest
+import pytest 
 
 from project.api.users.models import User
-
+from project.api.users.services import get_user_by_id
+from project import bcrypt
 
 def test_add_user(test_app, test_database):
     client = test_app.test_client()
@@ -73,7 +74,30 @@ def test_single_user(test_app, test_database, add_user):
     assert "jeffrey@testdriven.io" in data["email"]
     assert "password" not in data
 
+def test_update_user_with_password(test_app, test_database, add_user):
+    password_one = "greaterthaneight"
+    password_two = "somethingdifferent"
+    
+    user = add_user("user-to-be-updated", "update-me@testdriven.io", password_one)
+    assert bcrypt.check_password_hash(user.password, password_one)
 
+    client = test_app.test_client()
+    resp = client.put(
+        f"/users/{user.id}",
+        data=json.dumps({
+            "username": "me",
+            "email": "me@testdriven.io",
+            "password": password_two
+        }),
+        content_type="application/json",
+    )
+    assert resp.status_code == 200
+    
+    user = get_user_by_id(user.id)
+    assert bcrypt.check_password_hash(user.password, password_one)
+    assert not bcrypt.check_password_hash(user.password, password_two)
+    
+    
 def test_single_user_incorrect_id(test_app, test_database):
     client = test_app.test_client()
     resp = client.get("/users/999")
