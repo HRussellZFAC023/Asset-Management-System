@@ -189,7 +189,7 @@ class SignUp extends React.Component {
             <img onClick={() => window.location.replace("/")} className="login-logo" 
               alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg"/>
             </div>
-              <h1 className="title is-4">Sign Up</h1>
+              <h1 className="title signup-title is-4">Sign Up</h1>
               <div className="field">
                 <label htmlFor="name" className="label">
                   Name
