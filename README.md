@@ -31,6 +31,12 @@ docker-compose exec users python manage.py seed_db
 ```
 Ensure http://localhost:5001/users works as well.
 
+Configure git to avoid potential windows errors:
+```
+git config --global core.eol lf
+git config --global core.autocrlf input
+```
+
 Run the tests, lint, and format your code (before commit)
 
 ```shell
