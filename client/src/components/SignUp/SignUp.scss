@@ -1,5 +1,5 @@
-.my-fullheight {
-  min-height: calc(100vh - 56px);
+.parent-form {
+  height: 100vh;
 }
 
 .login-box {
@@ -21,7 +21,6 @@
 }
 
 .interactive-bg {
-  height: 100vh;
   background-image: 
     linear-gradient(transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px),
     linear-gradient(90deg, transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px);
@@ -69,8 +68,15 @@
   .sidebar {
     padding-top: 100px;
   }
-
-.signup-title {
-  margin-top: -30px;
+  .signup-title {
+    margin-top: -30px;
+  }
+  .interactive-bg{
+    visibility: visible;
+  }
 }
+
+.particles {
+  width: 100%;
+  height: 100%;
 }

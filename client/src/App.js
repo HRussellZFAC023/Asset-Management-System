@@ -13,19 +13,20 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {};
+    this.navPaths = ['/', '/users', '/dashboard', '/dashboard/users']
   }
 
   render() {
     return (
       <div>
-        <Route exact path={['/', '/users', '/dashboard']} component={NavBar} />
+        <Route exact path={this.navPaths} component={NavBar} />
         <Switch>
           <Route exact path ='/' component={Home} />
           <Route exact path ='/signin' component={SignIn} />
           <Route exact path ='/signup' component={SignUp} />
           <Route exact path ='/dashboard' component={Dashboard} />
           <Route exact path ='/dashboard/users' component={Users} />
-          <Route path="" component={NotFound}/>
+          <Route component={NotFound}/>
         </Switch>
       </div>
     );
