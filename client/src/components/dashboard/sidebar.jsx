@@ -1,13 +1,11 @@
 import React from "react";
+import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import Users from './asset-management/users'
 
-class Sidebar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
+const Sidebar = props => {
+  let { path, url } = useRouteMatch();
+  return (
+    <div>
       <aside className="menu is-hidden-mobile">
         <p className="menu-label">
           General
@@ -21,13 +19,17 @@ class Sidebar extends React.Component {
           Asset Management
         </p>
         <ul className="menu-list">
-          <li>Users</li>
+          <li><Link to={`${url}/users`}>Users</Link></li>
           <li>Types</li>
           <li>Assets</li>
         </ul>
       </aside>
-    );
-  }
+
+      <Switch>
+        <Route path={`${path}/:users`} component={Users}/>
+      </Switch>
+    </div>
+  )
 }
 
 export default Sidebar;
