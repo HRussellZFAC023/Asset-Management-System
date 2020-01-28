@@ -6,12 +6,22 @@ const UsersList = props => {
     <div>
       {props.users.map(user => {
         return (
-          <div key={user.id} className="box title is-4 username">
-            <span>{'Id: ' + user.id}</span>
-            <br />
-            <span>{'Username: ' + user.username}</span>
-            <br />
-            <span>{'Email: ' + user.email}</span>
+          <div key={user.id} className="box">
+            <div className="columns is-vcentered">
+              <div className ="column is-9">
+                <span>{'Username: ' + user.username}</span>
+                <br />
+                <span>{'Email: ' + user.email}</span>
+              </div>
+              <div className="column is-3">
+                <button className="button is-danger is-fullwidth" onClick={() => props.delete(user.id)}>
+                  <span>Delete</span>
+                  <span className="icon is-small">
+                    <i className="fa fa-times"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         );
       })}
@@ -20,7 +30,8 @@ const UsersList = props => {
 };
 
 UsersList.propTypes = {
-  users: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired,
+  delete: PropTypes.func.isRequired
 };
 
 export default UsersList;

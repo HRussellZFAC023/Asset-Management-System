@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter, Switch, Route } from 'react-router-dom';
-import axios from "axios";
 import NavBar from './components/nav-bar/nav-bar'
 import Users from "./components/dashboard/admin/users";
 import SignIn from "./components/sign-in/sign-in";

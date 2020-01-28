@@ -33,6 +33,18 @@ class Users extends React.Component {
       });
   }
 
+  removeUser(id) {
+    axios
+      .delete(`${process.env.REACT_APP_USERS_SERVICE_URL}/users/` + id)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    window.location.reload();
+  }
+
   render() {
     return (
       <div className="container">
@@ -43,9 +55,7 @@ class Users extends React.Component {
           </div>
           <div className="column is-9">
             <CurrentPath zone="Asset Management" path="Users" />
-            <div className="column is-half">
-              <UsersList users={this.state.users} />
-            </div>
+            <UsersList users={this.state.users} delete={this.removeUser}/>
           </div>
         </div>
       </div>
