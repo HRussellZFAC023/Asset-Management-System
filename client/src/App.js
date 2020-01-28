@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Users from "./components/dashboard/Admin/Users";
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
-import Home from "./components/Home/Home";
+import Home from "./components/Home/HomePage";
 import Dashboard from "./components/dashboard/Dashboard";
 import NotFound from "./components/NotFound/NotFound";
 import "./App.scss";
