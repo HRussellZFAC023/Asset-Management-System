@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const NotFound = () => (
   <section className="section">
@@ -8,8 +8,8 @@ const NotFound = () => (
       <hr />
       <p>‿︵‿︵‿︵‿ヽ(°□° )ノ︵‿︵‿︵‿︵</p>
       <br/>
-      <button 
-        onClick={() => window.location.replace("/")} 
+      <button
+        onClick={() => window.location.replace("/")}
         className="button is-primary"
       >Home Page</button>
     </div>

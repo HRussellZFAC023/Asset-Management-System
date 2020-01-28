@@ -1,9 +1,9 @@
 import React from "react";
-import Sidebar from './SideBar';
+import Sidebar from "./SideBar";
 import axios from "axios";
-import UserInfo from './UserInfo';
-import CurrentPath from './Path';
-import UsernamesTable from './UsernamesTable';
+import UserInfo from "./UserInfo";
+import CurrentPath from "./Path";
+import UsernamesTable from "./UsernamesTable";
 
 class Dashboard extends React.Component {
   constructor(props) {

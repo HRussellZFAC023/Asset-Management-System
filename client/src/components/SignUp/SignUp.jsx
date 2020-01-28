@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import "./SignUp.scss";
-import Particles from 'react-particles-js';
-import particlesOptions from '../../consts/particles';
+import Particles from "react-particles-js";
+import particlesOptions from "../../consts/particles";
 
 class SignUp extends React.Component {
   constructor(props) {

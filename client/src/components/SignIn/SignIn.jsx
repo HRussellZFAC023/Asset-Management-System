@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignIn.scss";
-import Particles from 'react-particles-js';
-import particlesOptions from '../../consts/particles'
+import Particles from "react-particles-js";
+import particlesOptions from "../../consts/particles";
 
 class SignIn extends React.Component {
   constructor(props) {
