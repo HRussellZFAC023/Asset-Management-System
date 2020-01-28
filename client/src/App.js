@@ -5,8 +5,8 @@ import Users from "./components/dashboard/Admin/Users";
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import Home from "./components/Home/Home";
-import Dashboard from './components/dashboard/Dashboard'
-import NotFound from './components/not-found/not-found'
+import Dashboard from "./components/dashboard/Dashboard";
+import NotFound from './components/NotFound/NotFound'
 import './App.scss';
 
 class App extends React.Component {
