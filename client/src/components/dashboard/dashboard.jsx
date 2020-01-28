@@ -1,9 +1,8 @@
 import React from "react";
-// import { Route, Switch } from 'react-router-dom';
 import Sidebar from './sidebar';
 import axios from "axios";
 import UserInfo from './user-info';
-// import Users from './asset-management/users';
+import CurrentPath from './current-path';
 import UsernamesTable from './usernames-table';
 
 class Dashboard extends React.Component {
@@ -44,11 +43,7 @@ class Dashboard extends React.Component {
             <Sidebar />
           </div>
           <div className="column is-9">
-            <nav className="breadcrumb" aria-label="breadcrumbs">
-              <ul>
-                <li className="is-active">Dashboard</li>
-              </ul>
-            </nav>
+            <CurrentPath zone="General" path="Dashboard"/>
             <section className="hero is-dark welcome is-small">
               <div className="hero-body">
                 <div className="container">

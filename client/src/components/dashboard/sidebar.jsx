@@ -1,9 +1,7 @@
 import React from "react";
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
-import Users from './asset-management/users'
+import { Link } from 'react-router-dom';
 
 const Sidebar = props => {
-  let { path, url } = useRouteMatch();
   return (
     <div>
       <aside className="menu is-hidden-mobile">
@@ -11,7 +9,7 @@ const Sidebar = props => {
           General
         </p>
         <ul className="menu-list">
-          <li>Dashboard</li>
+          <li><Link to={`/dashboard`}>Dashboard</Link></li>
           <li>Settings</li>
           <li>Other</li>
         </ul>
@@ -19,15 +17,11 @@ const Sidebar = props => {
           Asset Management
         </p>
         <ul className="menu-list">
-          <li><Link to={`${url}/users`}>Users</Link></li>
+          <li><Link to={`/dashboard/users`}>Users</Link></li>
           <li>Types</li>
           <li>Assets</li>
         </ul>
       </aside>
-
-      <Switch>
-        <Route path={`${path}/:users`} component={Users}/>
-      </Switch>
     </div>
   )
 }
