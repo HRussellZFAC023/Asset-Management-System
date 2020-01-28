@@ -1,5 +1,5 @@
-import React from 'react';
-import './home.scss'
+import React from "react";
+import "./HomePage.scss";
 
 const Home = () => (
   <section className="hero my-fullheight square">

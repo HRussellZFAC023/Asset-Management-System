@@ -1,10 +1,37 @@
 import React from "react";
-import Sidebar from './sidebar';
+import Sidebar from "./SideBar";
+import axios from "axios";
+import UserInfo from "./UserInfo";
+import CurrentPath from "./Path";
+import UsernamesTable from "./UsernamesTable";
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      users: []
+    };
+  }
+
+  componentDidMount() {
+    this.getUsers();
+  }
+
+  handleChange = event => {
+    const obj = {};
+    obj[event.target.name] = event.target.value;
+    this.setState(obj);
+  };
+
+  getUsers() {
+    axios
+      .get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
+      .then(res => {
+        this.setState({ users: res.data });
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   render() {
@@ -16,11 +43,7 @@ class Dashboard extends React.Component {
             <Sidebar />
           </div>
           <div className="column is-9">
-            <nav className="breadcrumb" aria-label="breadcrumbs">
-              <ul>
-                <li className="is-active">Dashboard</li>
-              </ul>
-            </nav>
+            <CurrentPath zone="General" path="Dashboard"/>
             <section className="hero is-dark welcome is-small">
               <div className="hero-body">
                 <div className="container">
@@ -38,22 +61,17 @@ class Dashboard extends React.Component {
               <div className="tile is-ancestor has-text-centered">
                 <div className="tile is-parent">
                   <article className="tile is-child box">
-                    <p className="title">15</p>
+                    <p className="title">0</p>
                     <p className="subtitle">Assets</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box">
-                    <p className="title">3</p>
+                    <p className="title">0</p>
                     <p className="subtitle">Types</p>
                   </article>
                 </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box">
-                    <p className="title">30</p>
-                    <p className="subtitle">Users</p>
-                  </article>
-                </div>
+                <UserInfo users={this.state.users} />
               </div>
             </section>
             <div className="columns">
@@ -61,63 +79,13 @@ class Dashboard extends React.Component {
                 <div className="card events-card">
                   <header className="card-header">
                     <p className="card-header-title">
-                      Events
+                      Users
                     </p>
                     <span className="icon">
                       <i className="fa fa-angle-down" aria-hidden="true"></i>
                     </span>
                   </header>
-                  <div className="card-table">
-                    <div className="content">
-                      <table className="table is-fullwidth is-striped">
-                        <tbody>
-                          <tr>
-                            <td width="5%"><i className="fa fa-bell-o"></i></td>
-                            <td>Lorum ipsum dolem aire</td>
-                            <td className="level-right">Action</td>
-                          </tr>
-                          <tr>
-                            <td width="5%"><i className="fa fa-bell-o"></i></td>
-                            <td>Lorum ipsum dolem aire</td>
-                            <td className="level-right">Action</td>
-                          </tr>
-                          <tr>
-                            <td width="5%"><i className="fa fa-bell-o"></i></td>
-                            <td>Lorum ipsum dolem aire</td>
-                            <td className="level-right">Action</td>
-                          </tr>
-                          <tr>
-                            <td width="5%"><i className="fa fa-bell-o"></i></td>
-                            <td>Lorum ipsum dolem aire</td>
-                            <td className="level-right">Action</td>
-                          </tr>
-                          <tr>
-                            <td width="5%"><i className="fa fa-bell-o"></i></td>
-                            <td>Lorum ipsum dolem aire</td>
-                            <td className="level-right">Action</td>
-                          </tr>
-                          <tr>
-                            <td width="5%"><i className="fa fa-bell-o"></i></td>
-                            <td>Lorum ipsum dolem aire</td>
-                            <td className="level-right">Action</td>
-                          </tr>
-                          <tr>
-                            <td width="5%"><i className="fa fa-bell-o"></i></td>
-                            <td>Lorum ipsum dolem aire</td>
-                            <td className="level-right">Action</td>
-                          </tr>
-                          <tr>
-                            <td width="5%"><i className="fa fa-bell-o"></i></td>
-                            <td>Lorum ipsum dolem aire</td>
-                            <td className="level-right">Action</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <footer className="card-footer">
-                    View All
-                  </footer>
+                  <UsernamesTable users={this.state.users} />
                 </div>
               </div>
               <div className="column is-6">

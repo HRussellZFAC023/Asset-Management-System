@@ -1,5 +1,6 @@
-import React from 'react';
-import './nav-bar.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./NavBar.scss";
 
 class NavBar extends React.Component {
 
@@ -31,28 +32,25 @@ class NavBar extends React.Component {
         </div>
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a className="navbar-item" href='/'>
+            <Link className="navbar-item" to='/'>
               Home
-            </a>
-            <a className="navbar-item" href='/'>
+            </Link>
+            <Link className="navbar-item" to='/'>
               Contact
-            </a>
-            <a className="navbar-item" href='/'>
+            </Link>
+            <Link className="navbar-item" to='/'>
               About
-            </a>
-            <a className="navbar-item" href='/users'>
-              Users
-            </a>
+            </Link>
           </div>
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a href="/signin" className="button is-primary">
+                <Link to="/signin" className="button is-primary">
                   Sign in
-                </a>
-                <a href="/signup" className="button is-info">
+                </Link>
+                <Link to="/signup" className="button is-info">
                   <strong>Sign up</strong>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
