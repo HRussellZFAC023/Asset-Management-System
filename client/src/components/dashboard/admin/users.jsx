@@ -1,8 +1,8 @@
 import React from "react";
-import Sidebar from '../sidebar';
+import Sidebar from '../SideBar';
 import axios from "axios";
 import UsersList from './UsersList';
-import CurrentPath from '../current-path';
+import CurrentPath from '../Path';
 
 class Users extends React.Component {
   constructor(props) {

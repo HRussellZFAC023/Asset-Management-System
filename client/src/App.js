@@ -1,11 +1,11 @@
 import React from "react";
 import { withRouter, Switch, Route } from 'react-router-dom';
-import NavBar from './components/nav-bar/nav-bar'
-import Users from "./components/dashboard/admin/users";
-import SignIn from "./components/sign-in/sign-in";
-import SignUp from "./components/sign-up/sign-up";
-import Home from "./components/home/home";
-import Dashboard from './components/dashboard/dashboard'
+import NavBar from './components/NavBar/NavBar';
+import Users from "./components/dashboard/Admin/Users";
+import SignIn from "./components/SignIn/SignIn";
+import SignUp from "./components/SignUp/SignUp";
+import Home from "./components/Home/Home";
+import Dashboard from './components/dashboard/Dashboard'
 import './App.scss';
 
 class App extends React.Component {

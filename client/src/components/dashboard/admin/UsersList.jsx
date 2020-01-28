@@ -9,9 +9,9 @@ const UsersList = props => {
           <div key={user.id} className="box">
             <div className="columns is-vcentered">
               <div className ="column is-9">
-                <span>{'Username: ' + user.username}</span>
+                <span><b>Username: </b>{user.username}</span>
                 <br />
-                <span>{'Email: ' + user.email}</span>
+                <span><b>Email: </b>{user.email}</span>
               </div>
               <div className="column is-3">
                 <button className="button is-danger is-fullwidth" onClick={() => props.delete(user.id)}>

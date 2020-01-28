@@ -1,5 +1,5 @@
 import React from "react";
-import "./sign-in.scss";
+import "./SignIn.scss";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -25,14 +25,14 @@ class SignIn extends React.Component {
     let errors = this.state.errors;
 
     switch (name) {
-      case 'email': 
-        errors.email = 
+      case 'email':
+        errors.email =
           validEmailRegex.test(value)
             ? ''
             : 'Email is not valid!';
         break;
-      case 'password': 
-        errors.password = 
+      case 'password':
+        errors.password =
           value.length < 1
             ? 'Please insert your password!'
             : '';
@@ -55,18 +55,18 @@ class SignIn extends React.Component {
     const { signInEmail, signInPassword, errors } = this.state;
 
     if (signInEmail.length < 1) {
-      this.setState(prevState => 
+      this.setState(prevState =>
         ({errors:{...prevState.errors, email: 'Please insert your email'}}));
       return false;
-    } 
+    }
     if (signInPassword.length < 1) {
-      this.setState(prevState => 
+      this.setState(prevState =>
         ({errors:{...prevState.errors, password: 'Please insert your password'}}));
       return false;
     }
 
     if (signInPassword.length < 8) {
-      this.setState(prevState => 
+      this.setState(prevState =>
         ({errors:{...prevState.errors, password: 'Your password must be min 8 characters'}}));
       return false;
     }
@@ -89,17 +89,17 @@ class SignIn extends React.Component {
 
   displayError = (errorMessage) => {
     if(this.state.showError) {
-      alert(errorMessage); 
+      alert(errorMessage);
     }
   }
 
   clearErrors = () => {
-    this.setState(prevState => 
+    this.setState(prevState =>
       ({errors:{...prevState.errors, email: ''}}));
-    this.setState(prevState => 
+    this.setState(prevState =>
       ({errors:{...prevState.errors, password: ''}}));
   }
-  
+
   onEmailChange = (event) => {
     this.setState({signInEmail: event.target.value})
     this.clearErrors();
@@ -125,7 +125,7 @@ class SignIn extends React.Component {
     if (target.charCode === 13) {
       this.onSubmitSignIn();
     }
-  } 
+  }
 
   render() {
     const {errors} = this.state;
@@ -145,11 +145,11 @@ class SignIn extends React.Component {
                       <input
                         name="email"
                         type="email"
-                        id="inputEmail" 
+                        id="inputEmail"
                         placeholder="e.g. bobsmith@gmail.com"
                         className="input form-control"
                         onChange={this.onEmailChange}
-                        onKeyPress={this.onEnterKeyPress} 
+                        onKeyPress={this.onEnterKeyPress}
                         required autoFocus
                       />
                       {errors.email.length > 0 && <span className='error'>{errors.email}</span>}
@@ -170,7 +170,7 @@ class SignIn extends React.Component {
                         placeholder="*******"
                         className="input form-control"
                         onChange={this.onPasswordChange}
-                        onKeyPress={this.onEnterKeyPress} 
+                        onKeyPress={this.onEnterKeyPress}
                         required
                       />
                       {errors.password.length > 0 && <span className='mb-2 error'>{errors.password}</span>}

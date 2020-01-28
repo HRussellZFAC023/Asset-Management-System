@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./sign-up.scss";
+import "./SignUp.scss";
 
 class SignUp extends React.Component {
   constructor(props) {
