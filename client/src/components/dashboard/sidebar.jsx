@@ -14,25 +14,16 @@ class Sidebar extends React.Component {
         </p>
         <ul className="menu-list">
           <li>Dashboard</li>
-          <li>Assets</li>
-          <li>Types</li>
+          <li>Settings</li>
           <li>Other</li>
         </ul>
         <p className="menu-label">
-          Administration
+          Asset Management
         </p>
         <ul className="menu-list">
           <li>Users</li>
-          <li>Add/Remove a Type</li>
-          <li>Remove an Asset</li>
-        </ul>
-        <p className="menu-label">
-          Assets
-        </p>
-        <ul className="menu-list">
-          <li>Your Assets</li>
-          <li>Create an Asset</li>
-          <li>Update an Asset</li>
+          <li>Types</li>
+          <li>Assets</li>
         </ul>
       </aside>
     );

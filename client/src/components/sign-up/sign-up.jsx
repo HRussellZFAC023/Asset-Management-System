@@ -36,7 +36,7 @@ class SignUp extends React.Component {
       .then(res => {
         console.log(res);
         this.setState({response: res.data.message})
-        window.location.replace("/users")
+        window.location.replace("/dashboard")
       })
       .catch(err => {
         console.log(err);
@@ -53,27 +53,27 @@ class SignUp extends React.Component {
     let errors = this.state.errors;
 
     switch (name) {
-      case 'name': 
-        errors.name = 
+      case 'name':
+        errors.name =
           value.length < 2
             ? 'Name must be 2 or more characters long!'
             : '';
         break;
-      case 'email': 
-        errors.email = 
+      case 'email':
+        errors.email =
           validEmailRegex.test(value)
             ? ''
             : 'Email is not valid!';
         break;
-      case 'password': 
-        errors.password = 
+      case 'password':
+        errors.password =
           value.length < 8
             ? 'Password must be 8 or more characters long!'
             : '';
         break;
-      case 'c_password': 
+      case 'c_password':
         const match = value === this.state.password;
-        errors.c_password = 
+        errors.c_password =
           !match
             ? 'Passwords do not match'
             : '';
@@ -98,26 +98,26 @@ class SignUp extends React.Component {
     const { name, email, password, password_match, errors } = this.state;
 
     if (name.length < 1) {
-      this.setState(prevState => 
+      this.setState(prevState =>
         ({errors:{...prevState.errors, name: 'Please insert your name'}}));
       return false;
     }
     if (email.length < 1) {
-      this.setState(prevState => 
+      this.setState(prevState =>
         ({errors:{...prevState.errors, email: 'Please insert your email'}}));
       return false;
-    } 
+    }
     if (password.length < 1) {
-      this.setState(prevState => 
+      this.setState(prevState =>
         ({errors:{...prevState.errors, password: 'Please insert your password'}}));
       return false;
     }
     if (!password_match) {
-      this.setState(prevState => 
+      this.setState(prevState =>
         ({errors:{...prevState.errors, c_password: 'Passwords do not match'}}));
     }
 
-    if (!errors.name.length && !errors.email.length 
+    if (!errors.name.length && !errors.email.length
     && !errors.password.length && password_match) {
       return true;
     } else {
@@ -130,13 +130,13 @@ class SignUp extends React.Component {
   }
 
   clearErrors = () => {
-    this.setState(prevState => 
+    this.setState(prevState =>
       ({errors:{...prevState.errors, name: ''}}));
-    this.setState(prevState => 
+    this.setState(prevState =>
       ({errors:{...prevState.errors, email: ''}}));
-    this.setState(prevState => 
+    this.setState(prevState =>
       ({errors:{...prevState.errors, password: ''}}));
-    this.setState(prevState => 
+    this.setState(prevState =>
       ({errors:{...prevState.errors, c_password: ''}}));
   }
 
@@ -154,7 +154,7 @@ class SignUp extends React.Component {
     if (target.charCode === 13) {
       this.onSubmitRegister();
     }
-  } 
+  }
 
   onSubmitRegister = (event) => {
     //const {name, email, password} = this.state;
@@ -173,7 +173,7 @@ class SignUp extends React.Component {
 
   displayError = (errorMessage) => {
     if(this.state.showError) {
-      alert(errorMessage); 
+      alert(errorMessage);
     }
   }
 
