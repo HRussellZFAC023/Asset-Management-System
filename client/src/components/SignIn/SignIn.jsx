@@ -132,9 +132,9 @@ class SignIn extends React.Component {
   render() {
     const {errors} = this.state;
     return (
-      <div className="columns is-vcentered">
-        <div className="login sidebar column is-4">
-          <section className="section">
+      <div className="columns is-vcentered parent-form">
+        <div className="login sidebar column is-one-third-widescreen is-one-quarter-fullhd">
+          <section className="section is-centered">
             <div className="has-text-centered">
               <img onClick={() => window.location.replace("/")} className="login-logo"
               alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg"/>
@@ -194,7 +194,7 @@ class SignIn extends React.Component {
               <div className='not-registered is-centered'><p>Don’t have an account?</p><a href='/signup'>Sign up</a></div>
           </section>
         </div>
-        <div className="interactive-bg has-background-primary column is-8">
+        <div className="interactive-bg has-background-primary column">
           <Particles className='particles' params={particlesOptions} />
         </div>
       </div>

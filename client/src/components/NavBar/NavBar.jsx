@@ -6,14 +6,38 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      isOpen: false,
+      isMounted: false
+    }
+  }
+
+  componentWillMount() {
+    this.setState({isMounted: true})
+    window.addEventListener('resize', this.toggleDropdownAuto, false);
+    window.addEventListener('click', this.toggleDropdownAuto, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.toggleDropdownAuto, false);
+    window.removeEventListener('click', this.toggleDropdownAuto, false);
+  }
+
+  toggleDropdownAuto = (event) => {
+    if (this.state.isOpen && this.state.isMounted) {
+      this.toggleDropdown(event);
+    }
   }
 
   toggleDropdown = (event) => {
-    console.log('Action!');
     var dropdown = document.querySelector('.navbar-menu');
+    var button = document.querySelector('.navbar-burger');
     event.stopPropagation();
-    dropdown.classList.toggle('is-active');
+    if (dropdown !== null && button !== null) {
+      dropdown.classList.toggle('is-active');
+      button.classList.toggle('is-active');
+    }
+    this.setState({isOpen: !this.state.isOpen})
   }
 
   render() {
