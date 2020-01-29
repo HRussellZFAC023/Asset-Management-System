@@ -59,7 +59,7 @@ class NavBar extends React.Component {
             <Link className="navbar-item" to='/'>
               Home
             </Link>
-            <Link className="navbar-item" to='/'>
+            <Link className="navbar-item" to='#contact'>
               Contact
             </Link>
             <Link className="navbar-item" to='/'>
