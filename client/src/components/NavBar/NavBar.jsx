@@ -13,7 +13,7 @@ class NavBar extends React.Component {
   }
 
   componentWillMount() {
-    this.setState({isMounted: true})
+    this.setState({ isMounted: true })
     window.addEventListener('resize', this.toggleDropdownAuto, false);
     window.addEventListener('click', this.toggleDropdownAuto, false);
   }
@@ -37,17 +37,17 @@ class NavBar extends React.Component {
       dropdown.classList.toggle('is-active');
       button.classList.toggle('is-active');
     }
-    this.setState({isOpen: !this.state.isOpen})
+    this.setState({ isOpen: !this.state.isOpen })
   }
 
   render() {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="/">
+          <Link className="navbar-item" href="/">
             <img className='logo-image' alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg" width={35} height={35} />
             <h1 className='title is-4'>Umbrella</h1>
-          </a>
+          </Link>
           <div onClick={this.toggleDropdown} role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true" />
             <span aria-hidden="true" />
