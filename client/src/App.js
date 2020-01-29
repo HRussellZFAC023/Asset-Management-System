@@ -13,13 +13,12 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {};
-    this.navPaths = ['/', '/users', '/dashboard', '/dashboard/users']
   }
 
   render() {
     return (
       <div>
-        <Route exact path={this.navPaths} component={NavBar} />
+        <NavBar />
         <Switch>
           <Route exact path ='/' component={Home} />
           <Route exact path ='/signin' component={SignIn} />

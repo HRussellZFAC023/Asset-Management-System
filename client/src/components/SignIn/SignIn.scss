@@ -22,7 +22,7 @@
 
 .interactive-bg {
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px),
     linear-gradient(90deg, transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px);
   background-size: 100% 12px, 12px 100%;
@@ -36,7 +36,7 @@
   border-radius: 50px;
 }
 
-.home-link { 
+.home-link {
   cursor: pointer;
 }
 
@@ -59,7 +59,10 @@
 
 @media (min-width: 770px) {
   .sidebar {
-    margin-top: -100px;
+    margin-top: -50px;
+   }
+   .signin-title {
+     margin-top: -90px;
    }
   .interactive-bg {
     visibility: visible;
@@ -67,7 +70,7 @@
 }
 
 @media (max-width: 769px) {
-  .interactive-bg{
+  .interactive-bg {
     visibility: hidden;
   }
   .interactive-bg {
