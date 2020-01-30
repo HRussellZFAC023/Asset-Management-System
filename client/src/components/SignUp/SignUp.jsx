@@ -192,7 +192,7 @@ class SignUp extends React.Component {
                 className="login-logo"
                 alt='logo'
                 src="https://image.flaticon.com/icons/svg/615/615598.svg"
-
+              />
             </div>
             <h1 className="title signup-title is-4">Sign Up</h1>
             <div className="field">
@@ -294,7 +294,7 @@ class SignUp extends React.Component {
             <div className='not-registered is-centered'>
               <p>Already have an account?</p>
               <Link to='/signin'>Sign in</Link>
-              </div>
+            </div>
           </section>
         </div>
         <div id="particles-js" className="interactive-bg has-background-info column">
