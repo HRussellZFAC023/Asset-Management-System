@@ -183,7 +183,7 @@ class SignUp extends React.Component {
   render() {
     const { errors, response } = this.state;
     return (
-      <div className="columns is-vcentered parent-form">
+      <div className="columns parent-form">
         <div className="login sidebar column is-one-third-widescreen is-one-quarter-fullhd">
           <section className="section">
             <div className="has-text-centered">
@@ -192,7 +192,7 @@ class SignUp extends React.Component {
                 className="login-logo"
                 alt='logo'
                 src="https://image.flaticon.com/icons/svg/615/615598.svg"
-              />
+
             </div>
             <h1 className="title signup-title is-4">Sign Up</h1>
             <div className="field">

@@ -133,9 +133,9 @@ class SignIn extends React.Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="columns is-vcentered parent-form">
+      <div className="columns parent-form">
         <div className="login sidebar column is-one-third-widescreen is-one-quarter-fullhd">
-          <section className="section is-centered">
+          <section className="section">
             <div className="has-text-centered">
               <img
                 onClick={() => window.location.replace("/")}
@@ -143,7 +143,8 @@ class SignIn extends React.Component {
                 alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg"
               />
             </div>
-            <h1 className="title is-4">Sign In</h1>
+
+            <h1 className="title signin-title is-4">Sign In</h1>
             <div className="field">
               <label htmlFor="email" className="label">
                 Email

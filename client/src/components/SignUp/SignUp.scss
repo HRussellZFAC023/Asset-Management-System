@@ -21,7 +21,7 @@
 }
 
 .interactive-bg {
-  background-image: 
+  background-image:
     linear-gradient(transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px),
     linear-gradient(90deg, transparent 11px, rgba(0, 0, 0, 0.10) 12px, transparent 12px);
   background-size: 100% 12px, 12px 100%;
@@ -65,11 +65,8 @@
 }
 
 @media (min-width: 770px) {
-  .sidebar {
-    padding-top: 100px;
-  }
   .signup-title {
-    margin-top: -30px;
+    margin-top: -90px;
   }
   .interactive-bg{
     visibility: visible;
