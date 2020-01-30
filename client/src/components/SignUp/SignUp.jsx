@@ -182,108 +182,111 @@ class SignUp extends React.Component {
   render() {
     const {errors, response} = this.state;
     return (
-      <div className="columns is-vcentered parent-form">
+      <div className="columns parent-form">
         <div className="login sidebar column is-one-third-widescreen is-one-quarter-fullhd">
           <section className="section">
             <div className="has-text-centered">
-            <img onClick={() => window.location.replace("/")} className="login-logo"
-              alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg"/>
+              <img onClick={() => window.location.replace("/")} className="login-logo"
+                alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg"/>
             </div>
-              <h1 className="title signup-title is-4">Sign Up</h1>
-              <div className="field">
-                <label htmlFor="name" className="label">
-                  Name
-                </label>
-                <div className="control has-icons-left">
-                  <input
-                    name='name'
-                    type="text"
-                    id="inputName"
-                    placeholder="e.g. Bob Smith"
-                    className="input form-control"
-                    onKeyPress={this.onEnterKeyPress}
-                    onChange={this.onNameChange}
-                    required autoFocus
-                  />
-                  {errors.name.length > 0 && <span className='error'>{errors.name}</span>}
-                  <span className="icon is-small is-left">
-                    <i className="fa fa-user" />
-                  </span>
-                </div>
+            <h1 className="title signup-title is-4">Sign Up</h1>
+            <div className="field">
+              <label htmlFor="name" className="label">
+                Name
+              </label>
+              <div className="control has-icons-left">
+                <input
+                  name='name'
+                  type="text"
+                  id="inputName"
+                  placeholder="e.g. Bob Smith"
+                  className="input form-control"
+                  onKeyPress={this.onEnterKeyPress}
+                  onChange={this.onNameChange}
+                  required autoFocus
+                />
+                {errors.name.length > 0 && <span className='error'>{errors.name}</span>}
+                <span className="icon is-small is-left">
+                  <i className="fa fa-user" />
+                </span>
               </div>
-              <div className="field">
-                <label htmlFor="email" className="label">
-                  Email
-                </label>
-                <div className="control has-icons-left">
-                  <input
-                    name='email'
-                    type="email"
-                    placeholder="e.g. bobsmith@gmail.com"
-                    className="input form-control"
-                    onKeyPress={this.onEnterKeyPress}
-                    onChange={this.onEmailChange}
-                    required
-                  />
-                  {errors.email.length > 0 && <span className='error'>{errors.email}</span>}
-                  <span className="icon is-small is-left">
-                    <i className="fa fa-envelope" />
-                  </span>
-                </div>
+            </div>
+            <div className="field">
+              <label htmlFor="email" className="label">
+                Email
+              </label>
+              <div className="control has-icons-left">
+                <input
+                  name='email'
+                  type="email"
+                  placeholder="e.g. bobsmith@gmail.com"
+                  className="input form-control"
+                  onKeyPress={this.onEnterKeyPress}
+                  onChange={this.onEmailChange}
+                  required
+                />
+                {errors.email.length > 0 && <span className='error'>{errors.email}</span>}
+                <span className="icon is-small is-left">
+                  <i className="fa fa-envelope" />
+                </span>
               </div>
-              <div className="field">
-                <label htmlFor="password" className="label">
-                  Password
-                </label>
-                <div className="control has-icons-left">
-                  <input
-                    name='password'
-                    type="password"
-                    id="inputPassword"
-                    placeholder="*******"
-                    className="input form-control"
-                    onKeyPress={this.onEnterKeyPress}
-                    onChange={this.onPasswordChange}
-                    required
-                  />
-                  {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
-                  <span className="icon is-small is-left">
-                    <i className="fa fa-lock" />
-                  </span>
-                </div>
+            </div>
+            <div className="field">
+              <label htmlFor="password" className="label">
+                Password
+              </label>
+              <div className="control has-icons-left">
+                <input
+                  name='password'
+                  type="password"
+                  id="inputPassword"
+                  placeholder="*******"
+                  className="input form-control"
+                  onKeyPress={this.onEnterKeyPress}
+                  onChange={this.onPasswordChange}
+                  required
+                />
+                {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
+                <span className="icon is-small is-left">
+                  <i className="fa fa-lock" />
+                </span>
               </div>
-              <div className="field">
-                <label htmlFor="confirmPassword" className="label">
-                  Confirm Password
-                </label>
-                <div className="control has-icons-left">
-                  <input
-                    name="c_password"
-                    type="password"
-                    id="inputCPassword"
-                    placeholder="*******"
-                    className="input form-control"
-                    onKeyPress={this.onEnterKeyPress}
-                    onChange={this.handleChange}
-                    required
-                  />
-                  {errors.c_password.length > 0 && <span className='error'>{errors.c_password}</span>}
-                  <span className="icon is-small is-left">
-                    <i className="fa fa-lock" />
-                  </span>
-                </div>
+            </div>
+            <div className="field">
+              <label htmlFor="confirmPassword" className="label">
+                Confirm Password
+              </label>
+              <div className="control has-icons-left">
+                <input
+                  name="c_password"
+                  type="password"
+                  id="inputCPassword"
+                  placeholder="*******"
+                  className="input form-control"
+                  onKeyPress={this.onEnterKeyPress}
+                  onChange={this.handleChange}
+                  required
+                />
+                {errors.c_password.length > 0 && <span className='error'>{errors.c_password}</span>}
+                <span className="icon is-small is-left">
+                  <i className="fa fa-lock" />
+                </span>
               </div>
-              <div className="field">
-                <label htmlFor="checkbox" className="checkbox">
-                  <input type="checkbox" id='checkbox'/>
-                  {" Remember me"}
-                </label>
-              </div>
-              <div className="field">
-                <button onClick={this.onSubmitRegister} className="button is-info is-fullwidth" type="submit">Sign Up</button>
-              </div>
-              {response.length > 0 && <span className='error'>{response}</span>}
-              <div className='not-registered is-centered'><p>Already have an account?</p><a href='/signin'>Sign in</a></div>
+            </div>
+            <div className="field">
+              <label htmlFor="checkbox" className="checkbox">
+                <input type="checkbox" id='checkbox'/>
+                {" Remember me"}
+              </label>
+            </div>
+            <div className="field">
+              <button onClick={this.onSubmitRegister} className="button is-info is-fullwidth" type="submit">Sign Up</button>
+            </div>
+            {response.length > 0 && <span className='error'>{response}</span>}
+            <div className='not-registered is-centered'>
+              <p>Already have an account?</p>
+              <a href='/signin'>Sign in</a>
+            </div>
           </section>
         </div>
         <div id="particles-js" className="interactive-bg has-background-info column">
