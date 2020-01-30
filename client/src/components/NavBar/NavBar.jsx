@@ -56,13 +56,13 @@ class NavBar extends React.Component {
         </div>
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a className="navbar-item" href='#'>
+            <a className="navbar-item" href='/#'>
               Home
             </a>
-            <a className="navbar-item" href='#contact'>
+            <a className="navbar-item" href='/#contact'>
               Contact
             </a>
-            <a className="navbar-item" href='#features'>
+            <a className="navbar-item" href='/#features'>
               About
             </a>
           </div>
