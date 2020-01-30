@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link as a, Link } from "react-router-dom";
 import "./NavBar.scss";
 
 class NavBar extends React.Component {
@@ -30,8 +30,8 @@ class NavBar extends React.Component {
   }
 
   handleToggleDropdown = (event) => {
-    var dropdown = document.querySelector('.navbar-menu');
-    var button = document.querySelector('.navbar-burger');
+    let dropdown = document.querySelector('.navbar-menu');
+    let button = document.querySelector('.navbar-burger');
     event.stopPropagation();
     if (dropdown !== null && button !== null) {
       dropdown.classList.toggle('is-active');
@@ -42,12 +42,12 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <Link className="navbar-item" href="/">
+          <a className="navbar-item" to="/">
             <img className='logo-image' alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg" width={35} height={35} />
             <h1 className='title is-4'>Umbrella</h1>
-          </Link>
+          </a>
           <div onClick={this.handleToggleDropdown} role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true" />
             <span aria-hidden="true" />
@@ -56,15 +56,15 @@ class NavBar extends React.Component {
         </div>
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <Link className="navbar-item" to='/'>
+            <a className="navbar-item" href='#'>
               Home
-            </Link>
-            <Link className="navbar-item" to='#contact'>
+            </a>
+            <a className="navbar-item" href='#contact'>
               Contact
-            </Link>
-            <Link className="navbar-item" to='/'>
+            </a>
+            <a className="navbar-item" href='#features'>
               About
-            </Link>
+            </a>
           </div>
           <div className="navbar-end">
             <div className="navbar-item">

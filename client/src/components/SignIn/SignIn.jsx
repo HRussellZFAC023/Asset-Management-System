@@ -2,6 +2,7 @@ import React from "react";
 import "./SignIn.scss";
 import Particles from "react-particles-js";
 import particlesOptions from "../../consts/particles";
+import { Link } from "react-router-dom";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -194,7 +195,10 @@ class SignIn extends React.Component {
             <div className="field">
               <button className="button button-login is-primary is-fullwidth" onClick={this.handleOnSubmitSignIn}>Sign In</button>
             </div>
-            <div className='not-registered is-centered'><p>Don’t have an account?</p><a href='/signup'>Sign up</a></div>
+            <div className='not-registered is-centered'>
+              <p>Don’t have an account?</p>
+              <Link to='/signup'>Sign up</Link>
+            </div>
           </section>
         </div>
         <div className="interactive-bg has-background-primary column">

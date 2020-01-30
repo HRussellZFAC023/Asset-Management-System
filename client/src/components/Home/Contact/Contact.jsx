@@ -2,7 +2,7 @@ import React from "react";
 import "./Contact.scss";
 
 const Contact = () => (
-  <section className="section hero is-dark">
+  <section className="section hero is-dark" id="contact">
     <h2 className="title has-text-centered">Hope you have your umbrella.</h2>
 
     <div className="columns">

@@ -16,7 +16,7 @@ const Header = () => (
         </h2>
         <div className="buttons is-centered">
           <Link className="control button is-primary" to="/signin">Sign in</Link>
-          <Link className="control button is-light" to="/about">Read more</Link>
+          <a className="control button is-light" href="#features">Read more</a>
         </div>
       </div>
     </div>

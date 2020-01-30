@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const Features = () => (
-  <section className="section container has-text-centered">
+  <section className="section container has-text-centered" id="features">
     <h2 className="home-header title">Asset management just got easier.</h2>
 
     <div className="block"><img className="is-16by9" src={banner} alt="Umbrella concept" /></div>
@@ -61,7 +61,7 @@ const Features = () => (
     </div>
 
     <div className="buttons is-centered">
-      <Link className="button is-info" href="#">Sign up now</Link>
+      <Link className="button is-info" to="/signup" >Sign up now</Link>
     </div>
   </section>
 

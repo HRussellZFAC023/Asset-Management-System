@@ -3,6 +3,7 @@ import axios from "axios";
 import "./SignUp.scss";
 import Particles from "react-particles-js";
 import particlesOptions from "../../consts/particles";
+import { Link } from "react-router-dom";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -290,7 +291,10 @@ class SignUp extends React.Component {
               <button onClick={this.handleOnSubmitRegister} className="button is-info is-fullwidth" type="submit">Sign Up</button>
             </div>
             {response.length > 0 && <span className='error'>{response}</span>}
-            <div className='not-registered is-centered'><p>Already have an account?</p><a href='/signin'>Sign in</a></div>
+            <div className='not-registered is-centered'>
+              <p>Already have an account?</p>
+              <Link to='/signin'>Sign in</Link>
+              </div>
           </section>
         </div>
         <div id="particles-js" className="interactive-bg has-background-info column">
