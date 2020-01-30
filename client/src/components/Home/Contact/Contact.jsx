@@ -2,21 +2,21 @@ import React from "react";
 import "./Contact.scss";
 
 const Contact = () => (
-  <section class="section hero is-dark">
-    <h2 class="title has-text-centered">Hope you have your umbrella.</h2>
+  <section className="section hero is-dark">
+    <h2 className="title has-text-centered">Hope you have your umbrella.</h2>
 
-    <div class="columns">
-      <div class="column is-3"></div>
-      <div class="column is-6">
+    <div className="columns">
+      <div className="column is-3" />
+      <div className="column is-6">
         <form>
-          <div class="field">
-            <div class="control">
-              <input class="input" type="email" placeholder="Email" />
+          <div className="field">
+            <div className="control">
+              <input className="input" type="email" placeholder="Email" />
             </div>
           </div>
 
-          <div class="field">
-            <div class="select is-fullwidth">
+          <div className="field">
+            <div className="select is-fullwidth">
               <select>
                 <option disabled="disabled" selected="selected">
                   Select product
@@ -37,17 +37,20 @@ const Contact = () => (
             </div>
           </div>
 
-          <div class="field">
-            <div class="control">
-              <textarea class="textarea" rows="5" placeholder="Write something...">
-              </textarea>
+          <div className="field">
+            <div className="control">
+              <textarea className="textarea" rows="5" placeholder="Write something..." />
             </div>
           </div>
 
-          <div class="field">
-            <div class="control">
-              <button class="button is-primary is-fullwidth" type=
-                "submit">Submit</button>
+          <div className="field">
+            <div className="control">
+              <button
+                className="button is-primary is-fullwidth"
+                type="submit"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </form>

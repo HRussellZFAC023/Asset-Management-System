@@ -7,11 +7,13 @@ const NotFound = () => (
       <p>Not Found</p>
       <hr />
       <p>‿︵‿︵‿︵‿ヽ(°□° )ノ︵‿︵‿︵‿︵</p>
-      <br/>
+      <br />
       <button
         onClick={() => window.location.replace("/")}
         className="button is-primary"
-      >Home Page</button>
+      >
+        Home Page
+      </button>
     </div>
     <img className='is-pulled-right' alt='notFoundImg' src="https://www.eastfieldcollege.edu/PublishingImages/Pages/PageNotFoundError/404-robot.gif" />
   </section>

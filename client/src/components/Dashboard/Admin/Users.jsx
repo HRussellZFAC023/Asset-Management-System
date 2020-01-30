@@ -55,7 +55,7 @@ class Users extends React.Component {
           </div>
           <div className="column is-9">
             <CurrentPath zone="Asset Management" path="Users" />
-            <UsersList users={this.state.users} delete={this.removeUser}/>
+            <UsersList users={this.state.users} delete={this.removeUser} />
           </div>
         </div>
       </div>

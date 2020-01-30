@@ -9,7 +9,7 @@ const Sidebar = props => {
           General
         </p>
         <ul className="menu-list">
-          <li><Link to={`/dashboard`}>Dashboard</Link></li>
+          <li><Link to="/dashboard">Dashboard</Link></li>
           <li>Settings</li>
           <li>Other</li>
         </ul>
@@ -17,7 +17,7 @@ const Sidebar = props => {
           Asset Management
         </p>
         <ul className="menu-list">
-          <li><Link to={`/dashboard/users`}>Users</Link></li>
+          <li><Link to="/dashboard/users">Users</Link></li>
           <li>Types</li>
           <li>Assets</li>
         </ul>

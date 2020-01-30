@@ -21,12 +21,12 @@ class App extends React.Component {
       <div>
         <Route exact path={this.navPaths} component={NavBar} />
         <Switch>
-          <Route exact path ='/' component={Home} />
-          <Route exact path ='/signin' component={SignIn} />
-          <Route exact path ='/signup' component={SignUp} />
-          <Route exact path ='/dashboard' component={Dashboard} />
-          <Route exact path ='/dashboard/users' component={Users} />
-          <Route component={NotFound}/>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/signin' component={SignIn} />
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/dashboard' component={Dashboard} />
+          <Route exact path='/dashboard/users' component={Users} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     );

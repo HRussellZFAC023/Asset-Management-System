@@ -6,11 +6,11 @@ import Content from "./Content/Content"
 import Contact from "./Contact/Contact";
 
 const Home = () => (
-  <div class="is-fluid">
-    <Header></Header>
-    <Features></Features>
-    <Content></Content>
-    <Contact></Contact>
+  <div className="is-fluid">
+    <Header />
+    <Features />
+    <Content />
+    <Contact />
   </div>
 );
 

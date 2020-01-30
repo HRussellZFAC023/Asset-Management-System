@@ -8,14 +8,14 @@ const UsernamesTable = props => {
         <table className="table is-fullwidth is-striped">
           <tbody>
             <tr>
-              <td width="5%"></td>
+              <td width="5%" />
               <td>Email</td>
               <td className="level-right">Username</td>
             </tr>
             {props.users.map(user => {
               return (
                 <tr key={user.id}>
-                  <td width="5%"><i className="fa fa-bell-o"></i></td>
+                  <td width="5%"><i className="fa fa-bell-o" /></td>
                   <td>{user.email}</td>
                   <td className="level-right">{user.username}</td>
                 </tr>

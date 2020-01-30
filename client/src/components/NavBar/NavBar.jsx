@@ -25,11 +25,11 @@ class NavBar extends React.Component {
 
   toggleDropdownAuto = (event) => {
     if (this.state.isOpen && this.state.isMounted) {
-      this.toggleDropdown(event);
+      this.handleToggleDropdown(event);
     }
   }
 
-  toggleDropdown = (event) => {
+  handleToggleDropdown = (event) => {
     var dropdown = document.querySelector('.navbar-menu');
     var button = document.querySelector('.navbar-burger');
     event.stopPropagation();
@@ -48,7 +48,7 @@ class NavBar extends React.Component {
             <img className='logo-image' alt='logo' src="https://image.flaticon.com/icons/svg/615/615598.svg" width={35} height={35} />
             <h1 className='title is-4'>Umbrella</h1>
           </Link>
-          <div onClick={this.toggleDropdown} role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <div onClick={this.handleToggleDropdown} role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true" />
             <span aria-hidden="true" />
             <span aria-hidden="true" />

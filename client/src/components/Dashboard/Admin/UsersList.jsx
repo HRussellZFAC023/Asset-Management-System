@@ -8,7 +8,7 @@ const UsersList = props => {
         return (
           <div key={user.id} className="box">
             <div className="columns is-vcentered">
-              <div className ="column is-9">
+              <div className="column is-9">
                 <span><b>Username: </b>{user.username}</span>
                 <br />
                 <span><b>Email: </b>{user.email}</span>
@@ -17,7 +17,7 @@ const UsersList = props => {
                 <button className="button is-danger is-fullwidth" onClick={() => props.delete(user.id)}>
                   <span>Delete</span>
                   <span className="icon is-small">
-                    <i className="fa fa-times"></i>
+                    <i className="fa fa-times" />
                   </span>
                 </button>
               </div>
