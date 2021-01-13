@@ -113,6 +113,7 @@ def test_single_user(test_app, monkeypatch):
     assert resp.status_code == 200
     assert "jeffrey" in data["username"]
     assert "jeffrey@testdriven.io" in data["email"]
+    assert "password" not in data
 
 
 def test_single_user_incorrect_id(test_app, monkeypatch):
@@ -154,6 +155,8 @@ def test_all_users(test_app, monkeypatch):
     assert "michael@mherman.org" in data[0]["email"]
     assert "fletcher" in data[1]["username"]
     assert "fletcher@notreal.com" in data[1]["email"]
+    assert "password" not in data[0]
+    assert "password" not in data[1]
 
 
 def test_remove_user(test_app, monkeypatch):
